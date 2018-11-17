@@ -41,5 +41,36 @@ namespace BugTrackingSystem
         {
             this.Close();
         }
+
+        private void btnBrowse_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                try
+                {
+                    OpenFileDialog ofd = new OpenFileDialog();
+                    if (ofd.ShowDialog() == DialogResult.OK)
+                    {
+                        picBrowse.Image = Image.FromFile(ofd.FileName);
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a profile picture");
+                    }
+
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

@@ -36,6 +36,16 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.picBrowse = new System.Windows.Forms.PictureBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dateDOJ = new System.Windows.Forms.DateTimePicker();
+            this.dateDOB = new System.Windows.Forms.DateTimePicker();
+            this.cmbGender = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtAdd = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.tctContact = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -45,23 +55,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtFname = new System.Windows.Forms.TextBox();
-            this.txtAdd = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.cmbGender = new System.Windows.Forms.ComboBox();
-            this.dateDOB = new System.Windows.Forms.DateTimePicker();
-            this.dateDOJ = new System.Windows.Forms.DateTimePicker();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.picBrowse = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).BeginInit();
+            this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -123,6 +123,7 @@
             this.btnBrowse.TabIndex = 19;
             this.btnBrowse.Text = "Browse Image:";
             this.btnBrowse.UseVisualStyleBackColor = true;
+            this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
             // groupBox1
             // 
@@ -152,6 +153,107 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Please Provide the Details";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // picBrowse
+            // 
+            this.picBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.picBrowse.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBrowse.InitialImage")));
+            this.picBrowse.Location = new System.Drawing.Point(822, 163);
+            this.picBrowse.Name = "picBrowse";
+            this.picBrowse.Size = new System.Drawing.Size(163, 113);
+            this.picBrowse.TabIndex = 21;
+            this.picBrowse.TabStop = false;
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.BackColor = System.Drawing.SystemColors.Info;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescription.Location = new System.Drawing.Point(179, 163);
+            this.txtDescription.Multiline = true;
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(383, 113);
+            this.txtDescription.TabIndex = 19;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(24, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(129, 26);
+            this.label9.TabIndex = 18;
+            this.label9.Text = "Description:";
+            // 
+            // dateDOJ
+            // 
+            this.dateDOJ.CalendarFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDOJ.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDOJ.Location = new System.Drawing.Point(823, 122);
+            this.dateDOJ.Name = "dateDOJ";
+            this.dateDOJ.Size = new System.Drawing.Size(162, 24);
+            this.dateDOJ.TabIndex = 17;
+            this.dateDOJ.Value = new System.DateTime(2018, 11, 16, 0, 0, 0, 0);
+            // 
+            // dateDOB
+            // 
+            this.dateDOB.CalendarFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateDOB.Location = new System.Drawing.Point(502, 122);
+            this.dateDOB.Name = "dateDOB";
+            this.dateDOB.Size = new System.Drawing.Size(160, 24);
+            this.dateDOB.TabIndex = 16;
+            this.dateDOB.Value = new System.DateTime(2018, 11, 16, 0, 0, 0, 0);
+            // 
+            // cmbGender
+            // 
+            this.cmbGender.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbGender.FormattingEnabled = true;
+            this.cmbGender.Items.AddRange(new object[] {
+            "Male",
+            "Female",
+            "Others"});
+            this.cmbGender.Location = new System.Drawing.Point(179, 119);
+            this.cmbGender.Name = "cmbGender";
+            this.cmbGender.Size = new System.Drawing.Size(121, 26);
+            this.cmbGender.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(24, 116);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(92, 26);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Gender:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(668, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(138, 26);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "Date of Join:";
+            // 
+            // txtAdd
+            // 
+            this.txtAdd.BackColor = System.Drawing.SystemColors.Info;
+            this.txtAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAdd.Location = new System.Drawing.Point(673, 26);
+            this.txtAdd.Name = "txtAdd";
+            this.txtAdd.Size = new System.Drawing.Size(312, 30);
+            this.txtAdd.TabIndex = 12;
+            // 
+            // txtFname
+            // 
+            this.txtFname.BackColor = System.Drawing.SystemColors.Info;
+            this.txtFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtFname.Location = new System.Drawing.Point(179, 28);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(311, 30);
+            this.txtFname.TabIndex = 11;
             // 
             // txtEmail
             // 
@@ -241,107 +343,6 @@
             this.panel4.Size = new System.Drawing.Size(1153, 67);
             this.panel4.TabIndex = 24;
             // 
-            // txtFname
-            // 
-            this.txtFname.BackColor = System.Drawing.SystemColors.Info;
-            this.txtFname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFname.Location = new System.Drawing.Point(179, 28);
-            this.txtFname.Name = "txtFname";
-            this.txtFname.Size = new System.Drawing.Size(311, 30);
-            this.txtFname.TabIndex = 11;
-            // 
-            // txtAdd
-            // 
-            this.txtAdd.BackColor = System.Drawing.SystemColors.Info;
-            this.txtAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAdd.Location = new System.Drawing.Point(673, 26);
-            this.txtAdd.Name = "txtAdd";
-            this.txtAdd.Size = new System.Drawing.Size(312, 30);
-            this.txtAdd.TabIndex = 12;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(668, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(138, 26);
-            this.label7.TabIndex = 13;
-            this.label7.Text = "Date of Join:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(24, 116);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(92, 26);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Gender:";
-            // 
-            // cmbGender
-            // 
-            this.cmbGender.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbGender.FormattingEnabled = true;
-            this.cmbGender.Items.AddRange(new object[] {
-            "Male",
-            "Female",
-            "Others"});
-            this.cmbGender.Location = new System.Drawing.Point(179, 119);
-            this.cmbGender.Name = "cmbGender";
-            this.cmbGender.Size = new System.Drawing.Size(121, 26);
-            this.cmbGender.TabIndex = 15;
-            // 
-            // dateDOB
-            // 
-            this.dateDOB.CalendarFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDOB.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDOB.Location = new System.Drawing.Point(502, 122);
-            this.dateDOB.Name = "dateDOB";
-            this.dateDOB.Size = new System.Drawing.Size(160, 24);
-            this.dateDOB.TabIndex = 16;
-            this.dateDOB.Value = new System.DateTime(2018, 11, 16, 0, 0, 0, 0);
-            // 
-            // dateDOJ
-            // 
-            this.dateDOJ.CalendarFont = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateDOJ.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateDOJ.Location = new System.Drawing.Point(823, 122);
-            this.dateDOJ.Name = "dateDOJ";
-            this.dateDOJ.Size = new System.Drawing.Size(162, 24);
-            this.dateDOJ.TabIndex = 17;
-            this.dateDOJ.Value = new System.DateTime(2018, 11, 16, 0, 0, 0, 0);
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.BackColor = System.Drawing.SystemColors.Info;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(179, 163);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(383, 113);
-            this.txtDescription.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 163);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(129, 26);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Description:";
-            // 
-            // picBrowse
-            // 
-            this.picBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.picBrowse.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBrowse.InitialImage")));
-            this.picBrowse.Location = new System.Drawing.Point(822, 163);
-            this.picBrowse.Name = "picBrowse";
-            this.picBrowse.Size = new System.Drawing.Size(163, 113);
-            this.picBrowse.TabIndex = 21;
-            this.picBrowse.TabStop = false;
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -384,9 +385,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
