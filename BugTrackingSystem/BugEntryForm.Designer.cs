@@ -35,7 +35,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlBugDetails = new System.Windows.Forms.Panel();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -63,7 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlBugDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -72,6 +72,7 @@
             // 
             // dgvBugEntryInformation
             // 
+            this.dgvBugEntryInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBugEntryInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugEntryInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBugEntryInformation.Location = new System.Drawing.Point(0, 0);
@@ -79,6 +80,7 @@
             this.dgvBugEntryInformation.RowTemplate.Height = 24;
             this.dgvBugEntryInformation.Size = new System.Drawing.Size(1325, 256);
             this.dgvBugEntryInformation.TabIndex = 0;
+            this.dgvBugEntryInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugEntryInformation_CellClick);
             // 
             // dateDate
             // 
@@ -129,37 +131,38 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "UPDATE Bug";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // panel1
+            // pnlBugDetails
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtCode);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.btnBrowse);
-            this.panel1.Controls.Add(this.txtBugDetails);
-            this.panel1.Controls.Add(this.txtLineNumber);
-            this.panel1.Controls.Add(this.picSnap);
-            this.panel1.Controls.Add(this.txtBlock);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label11);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.cmbProject);
-            this.panel1.Controls.Add(this.cmbIdentifiedBy);
-            this.panel1.Controls.Add(this.txtMethod);
-            this.panel1.Controls.Add(this.txtClass);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.dateDate);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtClassLibrary);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(6, 59);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1327, 422);
-            this.panel1.TabIndex = 12;
+            this.pnlBugDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBugDetails.Controls.Add(this.txtCode);
+            this.pnlBugDetails.Controls.Add(this.label12);
+            this.pnlBugDetails.Controls.Add(this.btnBrowse);
+            this.pnlBugDetails.Controls.Add(this.txtBugDetails);
+            this.pnlBugDetails.Controls.Add(this.txtLineNumber);
+            this.pnlBugDetails.Controls.Add(this.picSnap);
+            this.pnlBugDetails.Controls.Add(this.txtBlock);
+            this.pnlBugDetails.Controls.Add(this.label9);
+            this.pnlBugDetails.Controls.Add(this.label11);
+            this.pnlBugDetails.Controls.Add(this.label10);
+            this.pnlBugDetails.Controls.Add(this.cmbProject);
+            this.pnlBugDetails.Controls.Add(this.cmbIdentifiedBy);
+            this.pnlBugDetails.Controls.Add(this.txtMethod);
+            this.pnlBugDetails.Controls.Add(this.txtClass);
+            this.pnlBugDetails.Controls.Add(this.label6);
+            this.pnlBugDetails.Controls.Add(this.label7);
+            this.pnlBugDetails.Controls.Add(this.label8);
+            this.pnlBugDetails.Controls.Add(this.dateDate);
+            this.pnlBugDetails.Controls.Add(this.label5);
+            this.pnlBugDetails.Controls.Add(this.label4);
+            this.pnlBugDetails.Controls.Add(this.label2);
+            this.pnlBugDetails.Controls.Add(this.txtClassLibrary);
+            this.pnlBugDetails.Controls.Add(this.label3);
+            this.pnlBugDetails.Location = new System.Drawing.Point(6, 59);
+            this.pnlBugDetails.Name = "pnlBugDetails";
+            this.pnlBugDetails.Size = new System.Drawing.Size(1327, 422);
+            this.pnlBugDetails.TabIndex = 12;
             // 
             // txtCode
             // 
@@ -217,9 +220,10 @@
             this.picSnap.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.picSnap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picSnap.InitialImage = ((System.Drawing.Image)(resources.GetObject("picSnap.InitialImage")));
-            this.picSnap.Location = new System.Drawing.Point(787, 144);
+            this.picSnap.Location = new System.Drawing.Point(886, 144);
             this.picSnap.Name = "picSnap";
-            this.picSnap.Size = new System.Drawing.Size(529, 232);
+            this.picSnap.Size = new System.Drawing.Size(430, 232);
+            this.picSnap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSnap.TabIndex = 24;
             this.picSnap.TabStop = false;
             this.picSnap.WaitOnLoad = true;
@@ -248,7 +252,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(458, 136);
+            this.label11.Location = new System.Drawing.Point(565, 144);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(289, 33);
             this.label11.TabIndex = 23;
@@ -373,6 +377,7 @@
             this.btnDel.TabIndex = 17;
             this.btnDel.Text = "DELETE Bug";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // panel2
             // 
@@ -396,6 +401,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Register Identified Bug";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel3
             // 
@@ -430,7 +436,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1344, 814);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBugDetails);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel4);
@@ -441,8 +447,8 @@
             this.Text = "BugEntryForm";
             this.Load += new System.EventHandler(this.BugEntryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlBugDetails.ResumeLayout(false);
+            this.pnlBugDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -460,7 +466,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBugDetails;
         private System.Windows.Forms.TextBox txtMethod;
         private System.Windows.Forms.TextBox txtClass;
         private System.Windows.Forms.Label label6;
