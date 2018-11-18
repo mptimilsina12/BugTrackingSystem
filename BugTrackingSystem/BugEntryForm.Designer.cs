@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BugEntryForm));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvBugEntryInformation = new System.Windows.Forms.DataGridView();
             this.dateDate = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -62,7 +62,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
             this.panel2.SuspendLayout();
@@ -70,15 +70,15 @@
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dgvBugEntryInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1325, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvBugEntryInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBugEntryInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBugEntryInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvBugEntryInformation.Name = "dgvBugEntryInformation";
+            this.dgvBugEntryInformation.RowTemplate.Height = 24;
+            this.dgvBugEntryInformation.Size = new System.Drawing.Size(1325, 256);
+            this.dgvBugEntryInformation.TabIndex = 0;
             // 
             // dateDate
             // 
@@ -400,7 +400,7 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvBugEntryInformation);
             this.panel3.Location = new System.Drawing.Point(6, 535);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1327, 258);
@@ -440,7 +440,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BugEntryForm";
             this.Load += new System.EventHandler(this.BugEntryForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).EndInit();
@@ -454,7 +454,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBugEntryInformation;
         private System.Windows.Forms.DateTimePicker dateDate;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class UserClass
+   public class UserClass
     {
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
         public int manageUsers(int userId,

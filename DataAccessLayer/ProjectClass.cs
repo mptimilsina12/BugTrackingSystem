@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class ProjectClass
+   public class ProjectClass
     {
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
         public int manageProjects(int projectId,

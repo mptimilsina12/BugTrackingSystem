@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageMember));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMemberInformation = new System.Windows.Forms.DataGridView();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -58,7 +58,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberInformation)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).BeginInit();
             this.panel4.SuspendLayout();
@@ -67,21 +67,21 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvMemberInformation);
             this.panel1.Location = new System.Drawing.Point(-5, 380);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1160, 291);
             this.panel1.TabIndex = 23;
             // 
-            // dataGridView1
+            // dgvMemberInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1160, 291);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMemberInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMemberInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvMemberInformation.Name = "dgvMemberInformation";
+            this.dgvMemberInformation.RowTemplate.Height = 24;
+            this.dgvMemberInformation.Size = new System.Drawing.Size(1160, 291);
+            this.dgvMemberInformation.TabIndex = 0;
             // 
             // btnUpdate
             // 
@@ -382,7 +382,7 @@
             this.Text = "ManageMember";
             this.Load += new System.EventHandler(this.ManageMember_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberInformation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).EndInit();
@@ -396,7 +396,7 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMemberInformation;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDel;

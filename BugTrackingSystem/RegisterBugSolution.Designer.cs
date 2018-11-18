@@ -30,6 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterBugSolution));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbBugDetails = new System.Windows.Forms.ComboBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.txtSolutionDetails = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cmbProject = new System.Windows.Forms.ComboBox();
             this.txtCode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.picSnap = new System.Windows.Forms.PictureBox();
@@ -41,23 +50,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbProject = new System.Windows.Forms.ComboBox();
-            this.txtSolutionDetails = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnExit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnDel = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.cmbBugDetails = new System.Windows.Forms.ComboBox();
+            this.dgvBugSolutionInformation = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
             this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugSolutionInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,6 +82,99 @@
             this.panel1.Size = new System.Drawing.Size(1035, 492);
             this.panel1.TabIndex = 16;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            // 
+            // cmbBugDetails
+            // 
+            this.cmbBugDetails.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbBugDetails.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbBugDetails.FormattingEnabled = true;
+            this.cmbBugDetails.Location = new System.Drawing.Point(212, 129);
+            this.cmbBugDetails.Name = "cmbBugDetails";
+            this.cmbBugDetails.Size = new System.Drawing.Size(278, 39);
+            this.cmbBugDetails.TabIndex = 31;
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnExit);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnDel);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Location = new System.Drawing.Point(890, 253);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(135, 230);
+            this.panel2.TabIndex = 30;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExit.Location = new System.Drawing.Point(6, 160);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(124, 38);
+            this.btnExit.TabIndex = 18;
+            this.btnExit.Text = "CANCEL";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(6, 72);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(124, 38);
+            this.btnUpdate.TabIndex = 19;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDel
+            // 
+            this.btnDel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(6, 116);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(124, 38);
+            this.btnDel.TabIndex = 17;
+            this.btnDel.Text = "DELETE";
+            this.btnDel.UseVisualStyleBackColor = true;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(6, 29);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(124, 38);
+            this.btnAdd.TabIndex = 16;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            // 
+            // txtSolutionDetails
+            // 
+            this.txtSolutionDetails.BackColor = System.Drawing.SystemColors.Info;
+            this.txtSolutionDetails.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSolutionDetails.Location = new System.Drawing.Point(212, 170);
+            this.txtSolutionDetails.Multiline = true;
+            this.txtSolutionDetails.Name = "txtSolutionDetails";
+            this.txtSolutionDetails.Size = new System.Drawing.Size(278, 70);
+            this.txtSolutionDetails.TabIndex = 29;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(-1, 164);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(203, 33);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "Solution Details:";
+            // 
+            // cmbProject
+            // 
+            this.cmbProject.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbProject.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbProject.FormattingEnabled = true;
+            this.cmbProject.Location = new System.Drawing.Point(212, 88);
+            this.cmbProject.Name = "cmbProject";
+            this.cmbProject.Size = new System.Drawing.Size(278, 39);
+            this.cmbProject.TabIndex = 27;
             // 
             // txtCode
             // 
@@ -193,117 +286,24 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Register Bug Solution";
             // 
-            // cmbProject
-            // 
-            this.cmbProject.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbProject.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbProject.FormattingEnabled = true;
-            this.cmbProject.Location = new System.Drawing.Point(212, 88);
-            this.cmbProject.Name = "cmbProject";
-            this.cmbProject.Size = new System.Drawing.Size(278, 39);
-            this.cmbProject.TabIndex = 27;
-            // 
-            // txtSolutionDetails
-            // 
-            this.txtSolutionDetails.BackColor = System.Drawing.SystemColors.Info;
-            this.txtSolutionDetails.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSolutionDetails.Location = new System.Drawing.Point(212, 170);
-            this.txtSolutionDetails.Multiline = true;
-            this.txtSolutionDetails.Name = "txtSolutionDetails";
-            this.txtSolutionDetails.Size = new System.Drawing.Size(278, 70);
-            this.txtSolutionDetails.TabIndex = 29;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(-1, 164);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(203, 33);
-            this.label13.TabIndex = 28;
-            this.label13.Text = "Solution Details:";
-            // 
-            // panel2
-            // 
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.btnExit);
-            this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.btnDel);
-            this.panel2.Controls.Add(this.btnAdd);
-            this.panel2.Location = new System.Drawing.Point(890, 253);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(135, 230);
-            this.panel2.TabIndex = 30;
-            // 
-            // btnExit
-            // 
-            this.btnExit.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExit.Location = new System.Drawing.Point(6, 160);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(124, 38);
-            this.btnExit.TabIndex = 18;
-            this.btnExit.Text = "CANCEL";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(6, 72);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(124, 38);
-            this.btnUpdate.TabIndex = 19;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            // 
-            // btnDel
-            // 
-            this.btnDel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(6, 116);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(124, 38);
-            this.btnDel.TabIndex = 17;
-            this.btnDel.Text = "DELETE";
-            this.btnDel.UseVisualStyleBackColor = true;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdd.Location = new System.Drawing.Point(6, 29);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(124, 38);
-            this.btnAdd.TabIndex = 16;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvBugSolutionInformation);
             this.panel3.Location = new System.Drawing.Point(5, 559);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1035, 239);
             this.panel3.TabIndex = 18;
             // 
-            // dataGridView1
+            // dgvBugSolutionInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1033, 237);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // cmbBugDetails
-            // 
-            this.cmbBugDetails.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbBugDetails.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbBugDetails.FormattingEnabled = true;
-            this.cmbBugDetails.Location = new System.Drawing.Point(212, 129);
-            this.cmbBugDetails.Name = "cmbBugDetails";
-            this.cmbBugDetails.Size = new System.Drawing.Size(278, 39);
-            this.cmbBugDetails.TabIndex = 31;
+            this.dgvBugSolutionInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBugSolutionInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvBugSolutionInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvBugSolutionInformation.Name = "dgvBugSolutionInformation";
+            this.dgvBugSolutionInformation.RowTemplate.Height = 24;
+            this.dgvBugSolutionInformation.Size = new System.Drawing.Size(1033, 237);
+            this.dgvBugSolutionInformation.TabIndex = 0;
             // 
             // RegisterBugSolution
             // 
@@ -317,12 +317,12 @@
             this.Text = "RegisterBugSolution";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBugSolutionInformation)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -350,7 +350,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvBugSolutionInformation;
         private System.Windows.Forms.ComboBox cmbBugDetails;
     }
 }

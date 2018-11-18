@@ -39,7 +39,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.cmbProject = new System.Windows.Forms.ComboBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMemberProjectInformation = new System.Windows.Forms.DataGridView();
             this.cmbMember = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbMemberRole = new System.Windows.Forms.ComboBox();
@@ -47,7 +47,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberProjectInformation)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,21 +154,21 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvMemberProjectInformation);
             this.panel3.Location = new System.Drawing.Point(15, 373);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(700, 258);
             this.panel3.TabIndex = 10;
             // 
-            // dataGridView1
+            // dgvMemberProjectInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvMemberProjectInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMemberProjectInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvMemberProjectInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvMemberProjectInformation.Name = "dgvMemberProjectInformation";
+            this.dgvMemberProjectInformation.RowTemplate.Height = 24;
+            this.dgvMemberProjectInformation.Size = new System.Drawing.Size(698, 256);
+            this.dgvMemberProjectInformation.TabIndex = 0;
             // 
             // cmbMember
             // 
@@ -248,7 +248,7 @@
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMemberProjectInformation)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -268,7 +268,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox cmbProject;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMemberProjectInformation;
         private System.Windows.Forms.ComboBox cmbMember;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbMemberRole;

@@ -8,30 +8,40 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class MemberClass
+  public  class MemberClass
     {
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
-        public int manageProjects(int projectId,
-            String projectName,
-            DateTime projectStartDate,
-            DateTime projectEndDate,
-            String projectDescription,
-            int mode)
+        public int ManageMembers(int memberId,
+            String memberName,
+            String memberAddress,
+            String contactNumber,
+            String emailAddress,
+            String gender,
+            DateTime dateOfBirth,
+            DateTime dateOfJoin,
+            String memberDesignation,
+            byte[] profilePicture,
+            int Mode)
         {
             try
             {
-                SqlCommand commandToManageProjectTable = new SqlCommand("SP_ManageProjects", conn);
-                commandToManageProjectTable.CommandType = CommandType.StoredProcedure;
-                commandToManageProjectTable.Parameters.AddWithValue("@projectId", projectId);
-                commandToManageProjectTable.Parameters.AddWithValue("@projectName", projectName);
-                commandToManageProjectTable.Parameters.AddWithValue("@projectStartDate", projectStartDate);
-                commandToManageProjectTable.Parameters.AddWithValue("@projectEndDate", projectEndDate);
-                commandToManageProjectTable.Parameters.AddWithValue("@ProjectDescription", projectDescription);
-                commandToManageProjectTable.Parameters.AddWithValue("@mode", mode);
+                SqlCommand cmd = new SqlCommand("SP_ManageMembers", conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@memberId", memberId);
+                cmd.Parameters.AddWithValue("@memberName", memberName);
+                cmd.Parameters.AddWithValue("@memberAddress", memberAddress);
+                cmd.Parameters.AddWithValue("@contactNumber", contactNumber);
+                cmd.Parameters.AddWithValue("@emailAddress", emailAddress);
+                cmd.Parameters.AddWithValue("@gender", gender);
+                cmd.Parameters.AddWithValue("@dateOfBirth", dateOfBirth);
+                cmd.Parameters.AddWithValue("@dateOfJoin", dateOfJoin);
+                cmd.Parameters.AddWithValue("@memberDesignation", memberDesignation);
+                cmd.Parameters.AddWithValue("@profilePicture", profilePicture);
+                cmd.Parameters.AddWithValue("@Mode", Mode);
                 conn.Open();
-                int resultOfManageProject = commandToManageProjectTable.ExecuteNonQuery();
+                int result = cmd.ExecuteNonQuery();
                 conn.Close();
-                return resultOfManageProject;
+                return result;
             }
             catch (Exception ex)
             {
@@ -40,26 +50,17 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
-        /// <summary>
-        /// Here I will declare a DataTable which will get information of all the project from ProjectTable
-        /// And then I will SQLCommand  of CommandType Text to run query for selecting all the project information from ProjectTable
-        /// And Since I am using connection Model as DataAccessModel I will first open the database connnection and initiate SQLDataReader to fetch data using SQLCommand
-        /// Now I will Load the fetched data to the DataTable and then Close the connection
-        /// and Finally I will return the internally declared data table so as to return the information fetched from the database
-        /// </summary>
-        /// <returns></returns>
-        public DataTable getAllProjects()
+        public DataTable getAllMembers()
         {
             try
             {
-                DataTable dataTableToGetAllProjects = new DataTable();
-                SqlCommand dataSelectionCommand = new SqlCommand("Select * from ProjectTable", conn);
-                dataSelectionCommand.CommandType = CommandType.Text;
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select * from MemberTable", conn);
                 conn.Open();
-                SqlDataReader dataReaderForGettingAllProjects = dataSelectionCommand.ExecuteReader();
-                dataTableToGetAllProjects.Load(dataReaderForGettingAllProjects);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
                 conn.Close();
-                return dataTableToGetAllProjects;
+                return dt;
             }
             catch (Exception ex)
             {
@@ -68,22 +69,63 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
-        /// <summary>
-        /// This method is declared to count the the number Of Projects
-        /// </summary>       
-        /// <returns></returns>
-        public int countNumberOfProjects()
+        public String getRole(String UserName, String Password)
         {
             try
             {
-                DataTable dataTableToCountNumberOfProjects = new DataTable();
-                SqlCommand cmd = new SqlCommand("Select count(*) from ProjectTable", conn);
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select Role from MemberTable where UserName=@UserName and Password=@Password", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@UserName", UserName);
+                cmd.Parameters.AddWithValue("@Password", Password);
                 conn.Open();
-                SqlDataReader dataReaderToGetNumberOfProjectsInDatabase = cmd.ExecuteReader();
-                dataTableToCountNumberOfProjects.Load(dataReaderToGetNumberOfProjectsInDatabase);
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
                 conn.Close();
-                int numberOfProjects = Convert.ToInt32(dataTableToCountNumberOfProjects.Rows[0][0].ToString());
-                return numberOfProjects;
+                String Role = dt.Rows[0]["Role"].ToString();
+                return Role;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public int totalMember()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select count(*) from MemberTable", conn);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int TotalMember = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return TotalMember;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            finally { conn.Close(); }
+        }
+        public int GetmemberIdByUserName(String UserName)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                SqlCommand cmd = new SqlCommand("Select memberId from MemberTable where UserName=@UserName", conn);
+                cmd.CommandType = CommandType.Text;
+                cmd.Parameters.AddWithValue("@UserName", UserName);
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                conn.Close();
+                int memberId = Convert.ToInt32(dt.Rows[0][0].ToString());
+                return memberId;
             }
             catch (Exception ex)
             {

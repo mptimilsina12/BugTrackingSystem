@@ -45,11 +45,11 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUserInformation = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -179,6 +179,7 @@
             this.btnAdd.TabIndex = 11;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // btnExit
             // 
@@ -200,6 +201,7 @@
             this.btnDel.TabIndex = 13;
             this.btnDel.Text = "DELETE";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnUpdate
             // 
@@ -210,25 +212,28 @@
             this.btnUpdate.TabIndex = 15;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvUserInformation);
             this.panel1.Location = new System.Drawing.Point(9, 232);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1065, 241);
             this.panel1.TabIndex = 16;
             // 
-            // dataGridView1
+            // dgvUserInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1065, 241);
-            this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dgvUserInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvUserInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvUserInformation.Name = "dgvUserInformation";
+            this.dgvUserInformation.RowTemplate.Height = 24;
+            this.dgvUserInformation.Size = new System.Drawing.Size(1065, 241);
+            this.dgvUserInformation.TabIndex = 0;
+            this.dgvUserInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserInformation_CellClick);
+            this.dgvUserInformation.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -255,10 +260,11 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManageUser";
             this.Text = " ";
+            this.Load += new System.EventHandler(this.ManageUser_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserInformation)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,7 +288,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserInformation;
        // private BugTrackingSystemDataSet bugTrackingSystemDataSet;
         private System.Windows.Forms.Label label1;
     }

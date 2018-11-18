@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class ReportClass
+   public class ReportClass
     {
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
         public DataTable GetMemberByProject(String ProjectName)

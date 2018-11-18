@@ -32,20 +32,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvUserRoleInformation = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserRoleInformation)).BeginInit();
             this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,6 +91,20 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(566, 179);
             this.panel1.TabIndex = 5;
+            // 
+            // cmbUserRole
+            // 
+            this.cmbUserRole.BackColor = System.Drawing.SystemColors.Info;
+            this.cmbUserRole.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbUserRole.FormattingEnabled = true;
+            this.cmbUserRole.Items.AddRange(new object[] {
+            "Project Manager",
+            "Developer",
+            "Tester"});
+            this.cmbUserRole.Location = new System.Drawing.Point(196, 24);
+            this.cmbUserRole.Name = "cmbUserRole";
+            this.cmbUserRole.Size = new System.Drawing.Size(362, 39);
+            this.cmbUserRole.TabIndex = 5;
             // 
             // panel2
             // 
@@ -148,22 +162,22 @@
             // panel3
             // 
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.dataGridView1);
+            this.panel3.Controls.Add(this.dgvUserRoleInformation);
             this.panel3.Location = new System.Drawing.Point(12, 241);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(700, 258);
             this.panel3.TabIndex = 6;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // dataGridView1
+            // dgvUserRoleInformation
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(698, 256);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvUserRoleInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUserRoleInformation.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvUserRoleInformation.Location = new System.Drawing.Point(0, 0);
+            this.dgvUserRoleInformation.Name = "dgvUserRoleInformation";
+            this.dgvUserRoleInformation.RowTemplate.Height = 24;
+            this.dgvUserRoleInformation.Size = new System.Drawing.Size(698, 256);
+            this.dgvUserRoleInformation.TabIndex = 0;
             // 
             // panel4
             // 
@@ -184,20 +198,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "User Role Management";
             // 
-            // cmbUserRole
-            // 
-            this.cmbUserRole.BackColor = System.Drawing.SystemColors.Info;
-            this.cmbUserRole.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbUserRole.FormattingEnabled = true;
-            this.cmbUserRole.Items.AddRange(new object[] {
-            "Project Manager",
-            "Developer",
-            "Tester"});
-            this.cmbUserRole.Location = new System.Drawing.Point(196, 24);
-            this.cmbUserRole.Name = "cmbUserRole";
-            this.cmbUserRole.Size = new System.Drawing.Size(362, 39);
-            this.cmbUserRole.TabIndex = 5;
-            // 
             // ManageUSerRole
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -213,7 +213,7 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvUserRoleInformation)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.ResumeLayout(false);
@@ -232,7 +232,7 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvUserRoleInformation;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbUserRole;

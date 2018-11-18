@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class UserRoleClass
+  public  class UserRoleClass
     {
 
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);

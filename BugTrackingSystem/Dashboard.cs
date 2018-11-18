@@ -30,8 +30,8 @@ namespace BugTrackingSystem
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm1 LF = new LoginForm1();
-            LF.Show();
+            LoginPage LP = new LoginPage();
+            LP.Show();
         }
 
         private void manageUserToolStripMenuItem_Click(object sender, EventArgs e)

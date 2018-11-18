@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace DataAccessLayer
 {
-    class BugEntryClass
+    public class BugEntryClass
     {
         SqlConnection conn = new SqlConnection(ConnectionClass.ConnectionString);
         public int manageBugs(int bugId,
