@@ -34,10 +34,10 @@ namespace BugTrackingSystem
             {
 
                 dgvReport.DataSource = bugSolutionClass.getAllBugSolutions();
-                lblTotalProjects.Text = "TOTAL PORJECTS: " + projectClass.countNumberOfProjects().ToString();
-                lblTotalMembers.Text = "TOTAL MEMBERS: " + memberClass.totalMember();
-                lblTotalRegBug.Text = "TOTAL REGISTERED BUGS: " + bugEntry.getAllBugs().Rows.Count.ToString();
-                lblTotalSolvedBug.Text = "TOTAL BUGS FIXED: " + bugSolutionClass.getAllBugSolutions().Rows.Count.ToString();
+                lblTotalProjects.Text = projectClass.countNumberOfProjects().ToString();
+                lblTotalMembers.Text = memberClass.totalMember().ToString();
+                lblTotalRegBug.Text =  bugEntry.getAllBugs().Rows.Count.ToString();
+                lblTotalSolvedBug.Text = bugSolutionClass.getAllBugSolutions().Rows.Count.ToString();
             }
             catch (Exception ex)
             {

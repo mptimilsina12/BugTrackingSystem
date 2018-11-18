@@ -61,7 +61,7 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.currentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.currentuser = new System.Windows.Forms.ToolStripMenuItem();
             this.guthubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -400,21 +400,22 @@
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentUserToolStripMenuItem,
+            this.currentuser,
             this.guthubToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(1053, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(1014, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(241, 31);
+            this.menuStrip1.Size = new System.Drawing.Size(411, 31);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // currentUserToolStripMenuItem
+            // currentuser
             // 
-            this.currentUserToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.currentUserToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentUserToolStripMenuItem.Name = "currentUserToolStripMenuItem";
-            this.currentUserToolStripMenuItem.Size = new System.Drawing.Size(131, 27);
-            this.currentUserToolStripMenuItem.Text = "Current User";
+            this.currentuser.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.currentuser.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentuser.Image = ((System.Drawing.Image)(resources.GetObject("currentuser.Image")));
+            this.currentuser.Name = "currentuser";
+            this.currentuser.Size = new System.Drawing.Size(151, 27);
+            this.currentuser.Text = "Current User";
             // 
             // guthubToolStripMenuItem
             // 
@@ -509,7 +510,7 @@
         private System.Windows.Forms.ToolStripMenuItem manageUSerRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignMemberToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem currentUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem currentuser;
         private System.Windows.Forms.ToolStripMenuItem guthubToolStripMenuItem;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;

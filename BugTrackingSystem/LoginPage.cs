@@ -24,9 +24,11 @@ namespace BugTrackingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            Dashboard frm = new Dashboard();
             this.Hide();
-            frm.Show();
+            Dashboard DAS = new Dashboard();
+           DAS.Show();
+           
+           
         }
     }
 }

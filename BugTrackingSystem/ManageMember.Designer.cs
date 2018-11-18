@@ -31,11 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManageMember));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvMemberInformation = new System.Windows.Forms.DataGridView();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnBrowse = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbMemberDetails = new System.Windows.Forms.GroupBox();
             this.picBrowse = new System.Windows.Forms.PictureBox();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -55,11 +55,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberInformation)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbMemberDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -75,6 +75,7 @@
             // 
             // dgvMemberInformation
             // 
+            this.dgvMemberInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMemberInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMemberInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMemberInformation.Location = new System.Drawing.Point(0, 0);
@@ -82,16 +83,18 @@
             this.dgvMemberInformation.RowTemplate.Height = 24;
             this.dgvMemberInformation.Size = new System.Drawing.Size(1160, 291);
             this.dgvMemberInformation.TabIndex = 0;
+            this.dgvMemberInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberInformation_CellClick);
             // 
-            // btnUpdate
+            // btnAdd
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUpdate.Location = new System.Drawing.Point(7, 49);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(138, 38);
-            this.btnUpdate.TabIndex = 22;
-            this.btnUpdate.Text = "ADD";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnAdd.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Location = new System.Drawing.Point(7, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(138, 38);
+            this.btnAdd.TabIndex = 22;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnExit
             // 
@@ -113,6 +116,7 @@
             this.btnDel.TabIndex = 20;
             this.btnDel.Text = "DELETE";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnBrowse
             // 
@@ -125,42 +129,45 @@
             this.btnBrowse.UseVisualStyleBackColor = true;
             this.btnBrowse.Click += new System.EventHandler(this.btnBrowse_Click);
             // 
-            // groupBox1
+            // gbMemberDetails
             // 
-            this.groupBox1.Controls.Add(this.picBrowse);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.label9);
-            this.groupBox1.Controls.Add(this.dateDOJ);
-            this.groupBox1.Controls.Add(this.dateDOB);
-            this.groupBox1.Controls.Add(this.btnBrowse);
-            this.groupBox1.Controls.Add(this.cmbGender);
-            this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtAdd);
-            this.groupBox1.Controls.Add(this.txtFname);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.tctContact);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(4, 74);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(995, 300);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please Provide the Details";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gbMemberDetails.Controls.Add(this.picBrowse);
+            this.gbMemberDetails.Controls.Add(this.txtDescription);
+            this.gbMemberDetails.Controls.Add(this.label9);
+            this.gbMemberDetails.Controls.Add(this.dateDOJ);
+            this.gbMemberDetails.Controls.Add(this.dateDOB);
+            this.gbMemberDetails.Controls.Add(this.btnBrowse);
+            this.gbMemberDetails.Controls.Add(this.cmbGender);
+            this.gbMemberDetails.Controls.Add(this.label8);
+            this.gbMemberDetails.Controls.Add(this.label7);
+            this.gbMemberDetails.Controls.Add(this.txtAdd);
+            this.gbMemberDetails.Controls.Add(this.txtFname);
+            this.gbMemberDetails.Controls.Add(this.txtEmail);
+            this.gbMemberDetails.Controls.Add(this.tctContact);
+            this.gbMemberDetails.Controls.Add(this.label6);
+            this.gbMemberDetails.Controls.Add(this.label4);
+            this.gbMemberDetails.Controls.Add(this.label5);
+            this.gbMemberDetails.Controls.Add(this.label3);
+            this.gbMemberDetails.Controls.Add(this.label2);
+            this.gbMemberDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMemberDetails.Location = new System.Drawing.Point(4, 74);
+            this.gbMemberDetails.Name = "gbMemberDetails";
+            this.gbMemberDetails.Size = new System.Drawing.Size(995, 300);
+            this.gbMemberDetails.TabIndex = 18;
+            this.gbMemberDetails.TabStop = false;
+            this.gbMemberDetails.Text = "Please Provide the Details";
+            this.gbMemberDetails.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // picBrowse
             // 
+            this.picBrowse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("picBrowse.BackgroundImage")));
+            this.picBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picBrowse.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picBrowse.InitialImage = ((System.Drawing.Image)(resources.GetObject("picBrowse.InitialImage")));
             this.picBrowse.Location = new System.Drawing.Point(822, 163);
             this.picBrowse.Name = "picBrowse";
             this.picBrowse.Size = new System.Drawing.Size(163, 113);
+            this.picBrowse.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.picBrowse.TabIndex = 21;
             this.picBrowse.TabStop = false;
             // 
@@ -343,22 +350,23 @@
             this.panel4.Size = new System.Drawing.Size(1153, 67);
             this.panel4.TabIndex = 24;
             // 
-            // button1
+            // btnUpdate
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(7, 93);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 38);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "UPDATE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUpdate.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(7, 93);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(138, 38);
+            this.btnUpdate.TabIndex = 25;
+            this.btnUpdate.Text = "UPDATE";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btnAdd);
             this.panel2.Controls.Add(this.btnUpdate);
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnDel);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Location = new System.Drawing.Point(1005, 82);
@@ -374,7 +382,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbMemberDetails);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ManageMember";
@@ -383,8 +391,8 @@
             this.Load += new System.EventHandler(this.ManageMember_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberInformation)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMemberDetails.ResumeLayout(false);
+            this.gbMemberDetails.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBrowse)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -397,11 +405,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dgvMemberInformation;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnBrowse;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbMemberDetails;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox tctContact;
         private System.Windows.Forms.Label label6;
@@ -421,7 +429,7 @@
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker dateDOJ;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel panel2;
     }
 }
