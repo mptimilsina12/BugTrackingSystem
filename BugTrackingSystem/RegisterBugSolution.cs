@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DataAccessLayer;
+using BusinessLogicLayer;
+using System.IO;
+
 
 namespace BugTrackingSystem
 {
@@ -16,6 +20,14 @@ namespace BugTrackingSystem
         {
             InitializeComponent();
         }
+        
+        public int RegBugID;
+        BugEntryClass bugentryclass = new BugEntryClass();
+        ProjectClass projectclass = new ProjectClass();
+        MemberClass memberclass = new MemberClass();
+        BugSolutionClass bugsolnclass = new BugSolutionClass();
+        BusinessLogicClass businesslogicclass =new BusinessLogicClass();
+      
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -191,6 +203,50 @@ namespace BugTrackingSystem
         {
             this.Close();
 
+        }
+
+        private void RegisterBugSolution_Load(object sender, EventArgs e)
+        {
+            
+            dgvBugSolutionInformation.DataSource = bugsolnclass.getAllBugSolutions();
+
+          //  cmbProject.DataSource = projectclass.getAllProjects();
+           // cmbProject.ValueMember = "projectId";
+         //   cmbProject.DisplayMember = "projectName";
+        //    cmbProject.SelectedIndex = -1;
+
+            cmbBugDetails.DataSource = bugentryclass.getBugsByMemberAndProject(Convert.ToInt32(int memberId, int productId).ToString );
+            cmbBugDetails.ValueMember = "bugId";
+            cmbBugDetails.DisplayMember = "bugDetails";
+            cmbProject.DisplayMember = "projectName";
+
+            cmbBugDetails.DisplayMember = "snapShotOfBugMessage";
+            cmbBugDetails.SelectedIndex = -1;
+
+            cmbbugsolvedby.DataSource = memberclass.getAllMembers();
+            cmbbugsolvedby.ValueMember = "memberId";
+            cmbbugsolvedby.DisplayMember = "memberName";
+            cmbbugsolvedby.SelectedIndex = -1;
+        }
+
+        private void dgvBugSolutionInformation_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                RegBugID = Convert.ToInt32(dgvBugSolutionInformation.SelectedRows[0].Cells["bugSolutionId"].Value.ToString());
+                cmbbugsolvedby.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["memberName"].Value.ToString();
+                dateDate.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["dateOfSolutionIdentified"].Value.ToString();
+                cmbProject.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["projectName"].Value.ToString();
+                cmbBugDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["solutionDetails"].Value.ToString();              
+                MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
+                picSnap.Image = Image.FromStream(memoryStream);
+                txtCode.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["codeAfterFixingBug"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

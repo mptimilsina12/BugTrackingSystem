@@ -201,9 +201,10 @@
             this.picSnap.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.picSnap.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.picSnap.InitialImage = ((System.Drawing.Image)(resources.GetObject("picSnap.InitialImage")));
-            this.picSnap.Location = new System.Drawing.Point(496, 6);
+            this.picSnap.Location = new System.Drawing.Point(499, 8);
             this.picSnap.Name = "picSnap";
             this.picSnap.Size = new System.Drawing.Size(529, 232);
+            this.picSnap.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picSnap.TabIndex = 24;
             this.picSnap.TabStop = false;
             this.picSnap.WaitOnLoad = true;
@@ -297,6 +298,7 @@
             // 
             // dgvBugSolutionInformation
             // 
+            this.dgvBugSolutionInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBugSolutionInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBugSolutionInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvBugSolutionInformation.Location = new System.Drawing.Point(0, 0);
@@ -304,6 +306,7 @@
             this.dgvBugSolutionInformation.RowTemplate.Height = 24;
             this.dgvBugSolutionInformation.Size = new System.Drawing.Size(1033, 237);
             this.dgvBugSolutionInformation.TabIndex = 0;
+            this.dgvBugSolutionInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugSolutionInformation_CellClick);
             // 
             // RegisterBugSolution
             // 
@@ -315,6 +318,7 @@
             this.Controls.Add(this.panel4);
             this.Name = "RegisterBugSolution";
             this.Text = "RegisterBugSolution";
+            this.Load += new System.EventHandler(this.RegisterBugSolution_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
