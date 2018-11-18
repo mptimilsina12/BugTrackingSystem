@@ -44,11 +44,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cmbMemberRole = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbMemberInProject = new System.Windows.Forms.GroupBox();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberProjectInformation)).BeginInit();
-            this.groupBox1.SuspendLayout();
+            this.gbMemberInProject.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel4
@@ -120,6 +120,7 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -130,6 +131,7 @@
             this.btnDel.TabIndex = 17;
             this.btnDel.Text = "DELETE";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -140,6 +142,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cmbProject
             // 
@@ -162,6 +165,7 @@
             // 
             // dgvMemberProjectInformation
             // 
+            this.dgvMemberProjectInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvMemberProjectInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMemberProjectInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMemberProjectInformation.Location = new System.Drawing.Point(0, 0);
@@ -169,6 +173,7 @@
             this.dgvMemberProjectInformation.RowTemplate.Height = 24;
             this.dgvMemberProjectInformation.Size = new System.Drawing.Size(698, 256);
             this.dgvMemberProjectInformation.TabIndex = 0;
+            this.dgvMemberProjectInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMemberProjectInformation_CellClick);
             // 
             // cmbMember
             // 
@@ -210,34 +215,34 @@
             this.label5.TabIndex = 8;
             this.label5.Text = "Member Role:";
             // 
-            // groupBox1
+            // gbMemberInProject
             // 
-            this.groupBox1.Controls.Add(this.btnExit);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.btnDel);
-            this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.cmbMemberRole);
-            this.groupBox1.Controls.Add(this.txtDescription);
-            this.groupBox1.Controls.Add(this.btnAdd);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.cmbProject);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.cmbMember);
-            this.groupBox1.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(13, 62);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(701, 298);
-            this.groupBox1.TabIndex = 12;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Please Insert all the required fields.";
+            this.gbMemberInProject.Controls.Add(this.btnExit);
+            this.gbMemberInProject.Controls.Add(this.label2);
+            this.gbMemberInProject.Controls.Add(this.btnDel);
+            this.gbMemberInProject.Controls.Add(this.btnUpdate);
+            this.gbMemberInProject.Controls.Add(this.cmbMemberRole);
+            this.gbMemberInProject.Controls.Add(this.txtDescription);
+            this.gbMemberInProject.Controls.Add(this.btnAdd);
+            this.gbMemberInProject.Controls.Add(this.label3);
+            this.gbMemberInProject.Controls.Add(this.label5);
+            this.gbMemberInProject.Controls.Add(this.cmbProject);
+            this.gbMemberInProject.Controls.Add(this.label4);
+            this.gbMemberInProject.Controls.Add(this.cmbMember);
+            this.gbMemberInProject.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbMemberInProject.Location = new System.Drawing.Point(13, 62);
+            this.gbMemberInProject.Name = "gbMemberInProject";
+            this.gbMemberInProject.Size = new System.Drawing.Size(701, 298);
+            this.gbMemberInProject.TabIndex = 12;
+            this.gbMemberInProject.TabStop = false;
+            this.gbMemberInProject.Text = "Please Insert all the required fields.";
             // 
             // MembersinProject
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(726, 643);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbMemberInProject);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.MaximizeBox = false;
@@ -245,12 +250,13 @@
             this.Name = "MembersinProject";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MembersinProject";
+            this.Load += new System.EventHandler(this.MembersinProject_Load);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMemberProjectInformation)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gbMemberInProject.ResumeLayout(false);
+            this.gbMemberInProject.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -273,6 +279,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbMemberRole;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbMemberInProject;
     }
 }
