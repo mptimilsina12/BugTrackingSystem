@@ -24,7 +24,8 @@ namespace BugTrackingSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //its for current date
+            lblTime.Text = DateTime.Now.ToLongTimeString();
         }
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -56,8 +57,8 @@ namespace BugTrackingSystem
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             this.Hide();
-            LoginForm1 LF = new LoginForm1();
-            LF.Show();
+            LoginPage LP = new LoginPage();
+            LP.Show();
         }
 
         private void manageMemberToolStripMenuItem_Click(object sender, EventArgs e)
@@ -113,6 +114,17 @@ namespace BugTrackingSystem
         {
             Report Rep = new Report();
             Rep.Show();
+        }
+
+        private void guthubToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/mptimilsina12/BugTrackingSystem");
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

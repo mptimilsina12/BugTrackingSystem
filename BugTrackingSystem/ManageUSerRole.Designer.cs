@@ -31,7 +31,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlUserInformation = new System.Windows.Forms.Panel();
             this.cmbUserRole = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -42,7 +42,7 @@
             this.dgvUserRoleInformation = new System.Windows.Forms.DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.pnlUserInformation.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRoleInformation)).BeginInit();
@@ -80,17 +80,17 @@
             this.txtDescription.TabIndex = 4;
             this.txtDescription.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
-            // panel1
+            // pnlUserInformation
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cmbUserRole);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtDescription);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(12, 56);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(566, 179);
-            this.panel1.TabIndex = 5;
+            this.pnlUserInformation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlUserInformation.Controls.Add(this.cmbUserRole);
+            this.pnlUserInformation.Controls.Add(this.label2);
+            this.pnlUserInformation.Controls.Add(this.txtDescription);
+            this.pnlUserInformation.Controls.Add(this.label3);
+            this.pnlUserInformation.Location = new System.Drawing.Point(12, 56);
+            this.pnlUserInformation.Name = "pnlUserInformation";
+            this.pnlUserInformation.Size = new System.Drawing.Size(566, 179);
+            this.pnlUserInformation.TabIndex = 5;
             // 
             // cmbUserRole
             // 
@@ -138,6 +138,7 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -148,6 +149,7 @@
             this.btnDel.TabIndex = 17;
             this.btnDel.Text = "DELETE";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -158,6 +160,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // panel3
             // 
@@ -171,6 +174,7 @@
             // 
             // dgvUserRoleInformation
             // 
+            this.dgvUserRoleInformation.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUserRoleInformation.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUserRoleInformation.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvUserRoleInformation.Location = new System.Drawing.Point(0, 0);
@@ -178,6 +182,7 @@
             this.dgvUserRoleInformation.RowTemplate.Height = 24;
             this.dgvUserRoleInformation.Size = new System.Drawing.Size(698, 256);
             this.dgvUserRoleInformation.TabIndex = 0;
+            this.dgvUserRoleInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUserRoleInformation_CellClick);
             // 
             // panel4
             // 
@@ -206,11 +211,12 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlUserInformation);
             this.Name = "ManageUSerRole";
             this.Text = "ManageUSerRole";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Load += new System.EventHandler(this.ManageUSerRole_Load);
+            this.pnlUserInformation.ResumeLayout(false);
+            this.pnlUserInformation.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUserRoleInformation)).EndInit();
@@ -225,7 +231,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlUserInformation;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnUpdate;

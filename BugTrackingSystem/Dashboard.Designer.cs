@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.HOME = new System.Windows.Forms.PictureBox();
+            this.BugEntry = new System.Windows.Forms.PictureBox();
+            this.LogOut = new System.Windows.Forms.PictureBox();
+            this.ProjectManage = new System.Windows.Forms.PictureBox();
+            this.MemberManage = new System.Windows.Forms.PictureBox();
+            this.UserManage = new System.Windows.Forms.PictureBox();
             this.NEPALFLAG = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,25 +60,32 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.currentUserToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.guthubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HOME)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BugEntry)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogOut)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberManage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserManage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NEPALFLAG)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Location = new System.Drawing.Point(133, 1);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1342, 91);
@@ -109,11 +117,11 @@
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel2.Controls.Add(this.panel5);
-            this.panel2.Controls.Add(this.pictureBox6);
-            this.panel2.Controls.Add(this.pictureBox7);
-            this.panel2.Controls.Add(this.pictureBox4);
-            this.panel2.Controls.Add(this.pictureBox5);
-            this.panel2.Controls.Add(this.HOME);
+            this.panel2.Controls.Add(this.BugEntry);
+            this.panel2.Controls.Add(this.LogOut);
+            this.panel2.Controls.Add(this.ProjectManage);
+            this.panel2.Controls.Add(this.MemberManage);
+            this.panel2.Controls.Add(this.UserManage);
             this.panel2.Controls.Add(this.NEPALFLAG);
             this.panel2.Location = new System.Drawing.Point(1, 1);
             this.panel2.Name = "panel2";
@@ -127,70 +135,70 @@
             this.panel5.Size = new System.Drawing.Size(1409, 574);
             this.panel5.TabIndex = 5;
             // 
-            // pictureBox6
+            // BugEntry
             // 
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(5, 471);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(121, 110);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 5;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.BugEntry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.BugEntry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BugEntry.Image = ((System.Drawing.Image)(resources.GetObject("BugEntry.Image")));
+            this.BugEntry.InitialImage = null;
+            this.BugEntry.Location = new System.Drawing.Point(5, 471);
+            this.BugEntry.Name = "BugEntry";
+            this.BugEntry.Size = new System.Drawing.Size(121, 110);
+            this.BugEntry.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.BugEntry.TabIndex = 5;
+            this.BugEntry.TabStop = false;
+            this.BugEntry.Click += new System.EventHandler(this.pictureBox6_Click);
             // 
-            // pictureBox7
+            // LogOut
             // 
-            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(5, 587);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(121, 110);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 4;
-            this.pictureBox7.TabStop = false;
-            this.pictureBox7.Tag = "Logout";
-            this.pictureBox7.Click += new System.EventHandler(this.pictureBox7_Click);
+            this.LogOut.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LogOut.Image = ((System.Drawing.Image)(resources.GetObject("LogOut.Image")));
+            this.LogOut.Location = new System.Drawing.Point(5, 587);
+            this.LogOut.Name = "LogOut";
+            this.LogOut.Size = new System.Drawing.Size(121, 110);
+            this.LogOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.LogOut.TabIndex = 4;
+            this.LogOut.TabStop = false;
+            this.LogOut.Tag = "Logout";
+            this.LogOut.Click += new System.EventHandler(this.pictureBox7_Click);
             // 
-            // pictureBox4
+            // ProjectManage
             // 
-            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(5, 355);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(121, 110);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 3;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            this.ProjectManage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ProjectManage.Image = ((System.Drawing.Image)(resources.GetObject("ProjectManage.Image")));
+            this.ProjectManage.InitialImage = null;
+            this.ProjectManage.Location = new System.Drawing.Point(5, 355);
+            this.ProjectManage.Name = "ProjectManage";
+            this.ProjectManage.Size = new System.Drawing.Size(121, 110);
+            this.ProjectManage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ProjectManage.TabIndex = 3;
+            this.ProjectManage.TabStop = false;
+            this.ProjectManage.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
-            // pictureBox5
+            // MemberManage
             // 
-            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(5, 239);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(121, 110);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 2;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            this.MemberManage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MemberManage.Image = ((System.Drawing.Image)(resources.GetObject("MemberManage.Image")));
+            this.MemberManage.Location = new System.Drawing.Point(5, 239);
+            this.MemberManage.Name = "MemberManage";
+            this.MemberManage.Size = new System.Drawing.Size(121, 110);
+            this.MemberManage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MemberManage.TabIndex = 2;
+            this.MemberManage.TabStop = false;
+            this.MemberManage.Click += new System.EventHandler(this.pictureBox5_Click);
             // 
-            // HOME
+            // UserManage
             // 
-            this.HOME.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.HOME.Image = ((System.Drawing.Image)(resources.GetObject("HOME.Image")));
-            this.HOME.Location = new System.Drawing.Point(5, 122);
-            this.HOME.Name = "HOME";
-            this.HOME.Size = new System.Drawing.Size(121, 110);
-            this.HOME.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.HOME.TabIndex = 1;
-            this.HOME.TabStop = false;
-            this.HOME.Tag = "HOME";
-            this.HOME.Click += new System.EventHandler(this.HOME_Click);
+            this.UserManage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UserManage.Image = ((System.Drawing.Image)(resources.GetObject("UserManage.Image")));
+            this.UserManage.Location = new System.Drawing.Point(5, 122);
+            this.UserManage.Name = "UserManage";
+            this.UserManage.Size = new System.Drawing.Size(121, 110);
+            this.UserManage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.UserManage.TabIndex = 1;
+            this.UserManage.TabStop = false;
+            this.UserManage.Tag = "HOME";
+            this.UserManage.Click += new System.EventHandler(this.HOME_Click);
             // 
             // NEPALFLAG
             // 
@@ -206,11 +214,13 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.panel3.Controls.Add(this.lblTime);
             this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(-1, 704);
+            this.panel3.Location = new System.Drawing.Point(-1, 703);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1473, 55);
             this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // label2
             // 
@@ -229,7 +239,7 @@
             this.panel4.Controls.Add(this.menuStrip2);
             this.panel4.Location = new System.Drawing.Point(133, 88);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1412, 42);
+            this.panel4.Size = new System.Drawing.Size(1348, 42);
             this.panel4.TabIndex = 4;
             // 
             // menuStrip2
@@ -246,7 +256,7 @@
             this.logoutToolStripMenuItem});
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Size = new System.Drawing.Size(1412, 41);
+            this.menuStrip2.Size = new System.Drawing.Size(1348, 41);
             this.menuStrip2.TabIndex = 0;
             this.menuStrip2.Text = "menuStrip2";
             // 
@@ -337,7 +347,7 @@
             // 
             this.registerBUGToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBUGToolStripMenuItem.Name = "registerBUGToolStripMenuItem";
-            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
             this.registerBUGToolStripMenuItem.Text = "Register BUG";
             this.registerBUGToolStripMenuItem.Click += new System.EventHandler(this.registerBUGToolStripMenuItem_Click);
             // 
@@ -345,7 +355,7 @@
             // 
             this.bUGSolutionToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bUGSolutionToolStripMenuItem.Name = "bUGSolutionToolStripMenuItem";
-            this.bUGSolutionToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.bUGSolutionToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
             this.bUGSolutionToolStripMenuItem.Text = "BUG Solution";
             this.bUGSolutionToolStripMenuItem.Click += new System.EventHandler(this.bUGSolutionToolStripMenuItem_Click);
             // 
@@ -384,6 +394,48 @@
             this.panel6.Size = new System.Drawing.Size(1342, 581);
             this.panel6.TabIndex = 5;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentUserToolStripMenuItem,
+            this.guthubToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(1053, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(241, 31);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // currentUserToolStripMenuItem
+            // 
+            this.currentUserToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.currentUserToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentUserToolStripMenuItem.Name = "currentUserToolStripMenuItem";
+            this.currentUserToolStripMenuItem.Size = new System.Drawing.Size(131, 27);
+            this.currentUserToolStripMenuItem.Text = "Current User";
+            // 
+            // guthubToolStripMenuItem
+            // 
+            this.guthubToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.guthubToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guthubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guthubToolStripMenuItem.Image")));
+            this.guthubToolStripMenuItem.Name = "guthubToolStripMenuItem";
+            this.guthubToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
+            this.guthubToolStripMenuItem.Text = "Guthub";
+            this.guthubToolStripMenuItem.Click += new System.EventHandler(this.guthubToolStripMenuItem_Click);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(1319, 15);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(76, 31);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "00:00:00";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -396,6 +448,7 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -405,11 +458,11 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HOME)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BugEntry)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.LogOut)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemberManage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UserManage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.NEPALFLAG)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -417,6 +470,8 @@
             this.panel4.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -427,11 +482,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox HOME;
+        private System.Windows.Forms.PictureBox BugEntry;
+        private System.Windows.Forms.PictureBox LogOut;
+        private System.Windows.Forms.PictureBox ProjectManage;
+        private System.Windows.Forms.PictureBox MemberManage;
+        private System.Windows.Forms.PictureBox UserManage;
         private System.Windows.Forms.PictureBox NEPALFLAG;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
@@ -453,6 +508,11 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ToolStripMenuItem manageUSerRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignMemberToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem currentUserToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem guthubToolStripMenuItem;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

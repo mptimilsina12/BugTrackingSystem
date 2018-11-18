@@ -61,13 +61,13 @@ namespace BugTrackingSystem
                 {
                     MessageBox.Show("NEW USER HAS BEEN ADDED");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
                 else
                 {
                     MessageBox.Show("ERROR ON ADDING NEW USER");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
             }
             catch (Exception ex)
@@ -86,13 +86,13 @@ namespace BugTrackingSystem
                 {
                     MessageBox.Show("NEW USER HAS BEEN UPDATED");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
                 else
                 {
                     MessageBox.Show("ERROR ON ADDING NEW UPDAED");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
             }
             catch (Exception ex)
@@ -104,15 +104,20 @@ namespace BugTrackingSystem
 
         private void dgvUserInformation_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            dgvUserInformation.DataSource = userClass.getAllUsers();
-            cmbFullName.DataSource = memberClass.getAllMembers();
-            cmbFullName.ValueMember = "memberId";
-            cmbFullName.DisplayMember = "memberName";
-            cmbFullName.SelectedIndex = -1;
-            cmbUserRole.DataSource = userRoleClass.getAllUserRoles();
-            cmbUserRole.ValueMember = "userRoleId";
-            cmbUserRole.DisplayMember = "userRole";
-            cmbUserRole.SelectedIndex = -1;
+            try
+            {
+                userId = Convert.ToInt32(dgvUserInformation.SelectedRows[0].Cells["Id"].Value.ToString());
+                cmbUserRole.Text = dgvUserInformation.SelectedRows[0].Cells["Role"].Value.ToString();
+                cmbFullName.Text = dgvUserInformation.SelectedRows[0].Cells["Name"].Value.ToString();
+                txtUserName.Text = dgvUserInformation.SelectedRows[0].Cells["Username"].Value.ToString();
+                txtPassword.Text = dgvUserInformation.SelectedRows[0].Cells["Password"].Value.ToString();
+                txtCPassword.Text = dgvUserInformation.SelectedRows[0].Cells["Password"].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnDel_Click(object sender, EventArgs e)
@@ -124,13 +129,13 @@ namespace BugTrackingSystem
                 {
                     MessageBox.Show("NEW USER HAS BEEN DELETED");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
                 else
                 {
                     MessageBox.Show("ERROR ON ADDING NEW DELETED");
                     dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(panel1);
+                    AssistantClass.makeFieldsBlank(groupBox1);
                 }
             }
             catch (Exception ex)
