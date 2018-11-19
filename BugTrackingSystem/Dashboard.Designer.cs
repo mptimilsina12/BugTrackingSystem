@@ -33,6 +33,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.currentuser = new System.Windows.Forms.ToolStripMenuItem();
+            this.guthubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.BugEntry = new System.Windows.Forms.PictureBox();
@@ -42,6 +45,7 @@
             this.UserManage = new System.Windows.Forms.PictureBox();
             this.NEPALFLAG = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lblTime = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -60,13 +64,10 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.currentuser = new System.Windows.Forms.ToolStripMenuItem();
-            this.guthubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.lblTime = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.BugEntry)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogOut)).BeginInit();
@@ -77,7 +78,6 @@
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.menuStrip2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -112,6 +112,39 @@
             this.label1.Size = new System.Drawing.Size(553, 95);
             this.label1.TabIndex = 0;
             this.label1.Text = "Bug Tracking System";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.currentuser,
+            this.guthubToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(1014, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(261, 31);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // currentuser
+            // 
+            this.currentuser.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.currentuser.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.currentuser.Image = ((System.Drawing.Image)(resources.GetObject("currentuser.Image")));
+            this.currentuser.Name = "currentuser";
+            this.currentuser.Size = new System.Drawing.Size(151, 27);
+            this.currentuser.Text = "Current User";
+            // 
+            // guthubToolStripMenuItem
+            // 
+            this.guthubToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.guthubToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.guthubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guthubToolStripMenuItem.Image")));
+            this.guthubToolStripMenuItem.Name = "guthubToolStripMenuItem";
+            this.guthubToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
+            this.guthubToolStripMenuItem.Text = "Guthub";
+            this.guthubToolStripMenuItem.Click += new System.EventHandler(this.guthubToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -221,6 +254,16 @@
             this.panel3.Size = new System.Drawing.Size(1473, 55);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTime.Location = new System.Drawing.Point(1319, 15);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(76, 31);
+            this.lblTime.TabIndex = 1;
+            this.lblTime.Text = "00:00:00";
             // 
             // label2
             // 
@@ -375,6 +418,7 @@
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(98, 37);
             this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -393,49 +437,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1342, 581);
             this.panel6.TabIndex = 5;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.currentuser,
-            this.guthubToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(1014, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(411, 31);
-            this.menuStrip1.TabIndex = 2;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // currentuser
-            // 
-            this.currentuser.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.currentuser.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.currentuser.Image = ((System.Drawing.Image)(resources.GetObject("currentuser.Image")));
-            this.currentuser.Name = "currentuser";
-            this.currentuser.Size = new System.Drawing.Size(151, 27);
-            this.currentuser.Text = "Current User";
-            // 
-            // guthubToolStripMenuItem
-            // 
-            this.guthubToolStripMenuItem.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.guthubToolStripMenuItem.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.guthubToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("guthubToolStripMenuItem.Image")));
-            this.guthubToolStripMenuItem.Name = "guthubToolStripMenuItem";
-            this.guthubToolStripMenuItem.Size = new System.Drawing.Size(102, 27);
-            this.guthubToolStripMenuItem.Text = "Guthub";
-            this.guthubToolStripMenuItem.Click += new System.EventHandler(this.guthubToolStripMenuItem_Click);
-            // 
-            // lblTime
-            // 
-            this.lblTime.AutoSize = true;
-            this.lblTime.Font = new System.Drawing.Font("Microsoft Uighur", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTime.Location = new System.Drawing.Point(1319, 15);
-            this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(76, 31);
-            this.lblTime.TabIndex = 1;
-            this.lblTime.Text = "00:00:00";
             // 
             // Dashboard
             // 
@@ -458,6 +459,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.BugEntry)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.LogOut)).EndInit();
@@ -471,8 +474,6 @@
             this.panel4.PerformLayout();
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }

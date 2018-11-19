@@ -30,5 +30,17 @@ namespace BugTrackingSystem
            
            
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Dashboard DAS = new Dashboard();
+            DAS.Show();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
