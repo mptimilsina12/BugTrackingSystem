@@ -241,7 +241,7 @@ namespace BugTrackingSystem
                 dateDate.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["dateOfSolutionIdentified"].Value.ToString();
                 cmbProject.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["projectName"].Value.ToString();
                 cmbBugDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["solutionDetails"].Value.ToString();              
-                MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
+               MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
                 picSnap.Image = Image.FromStream(memoryStream);
                 txtCode.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["codeAfterFixingBug"].Value.ToString();
             }

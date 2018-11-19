@@ -97,9 +97,9 @@ namespace BugTrackingSystem
         {
             try
             {
-                userRoleId = Convert.ToInt32(dgvUserRoleInformation.SelectedRows[0].Cells["Id"].Value.ToString());
-                cmbUserRole.Text = dgvUserRoleInformation.SelectedRows[0].Cells["UserRole"].Value.ToString();
-                txtDescription.Text = dgvUserRoleInformation.SelectedRows[0].Cells["Descrition"].Value.ToString();
+                userRoleId = Convert.ToInt32(dgvUserRoleInformation.SelectedRows[0].Cells["userRoleId"].Value.ToString());
+                cmbUserRole.Text = dgvUserRoleInformation.SelectedRows[0].Cells["userRole"].Value.ToString();
+                txtDescription.Text = dgvUserRoleInformation.SelectedRows[0].Cells["roleDescription"].Value.ToString();
             }
             catch (Exception ex)
             {

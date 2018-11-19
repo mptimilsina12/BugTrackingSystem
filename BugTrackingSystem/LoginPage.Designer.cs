@@ -38,9 +38,9 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -95,9 +95,9 @@
             this.groupBox2.Controls.Add(this.btnExit);
             this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.txtPassword);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.txtUserName);
             this.groupBox2.Font = new System.Drawing.Font("Arial Unicode MS", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(246, 137);
             this.groupBox2.Name = "groupBox2";
@@ -117,6 +117,7 @@
             this.cbShowPassword.TabIndex = 28;
             this.cbShowPassword.Text = "Show Password";
             this.cbShowPassword.UseVisualStyleBackColor = true;
+            this.cbShowPassword.CheckedChanged += new System.EventHandler(this.cbShowPassword_CheckedChanged);
             // 
             // btnExit
             // 
@@ -155,15 +156,16 @@
             this.label4.TabIndex = 23;
             this.label4.Text = "User Name:";
             // 
-            // textBox1
+            // txtPassword
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox1.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(222, 70);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(240, 33);
-            this.textBox1.TabIndex = 24;
+            this.txtPassword.BackColor = System.Drawing.SystemColors.Info;
+            this.txtPassword.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(222, 70);
+            this.txtPassword.Multiline = true;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(240, 33);
+            this.txtPassword.TabIndex = 24;
             // 
             // label5
             // 
@@ -176,15 +178,15 @@
             this.label5.TabIndex = 21;
             this.label5.Text = "Password:";
             // 
-            // textBox2
+            // txtUserName
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Info;
-            this.textBox2.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(222, 27);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(240, 33);
-            this.textBox2.TabIndex = 22;
+            this.txtUserName.BackColor = System.Drawing.SystemColors.Info;
+            this.txtUserName.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUserName.Location = new System.Drawing.Point(222, 27);
+            this.txtUserName.Multiline = true;
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(240, 33);
+            this.txtUserName.TabIndex = 22;
             // 
             // LoginPage
             // 
@@ -223,8 +225,8 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUserName;
     }
 }

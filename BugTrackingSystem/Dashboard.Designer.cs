@@ -390,7 +390,7 @@
             // 
             this.registerBUGToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBUGToolStripMenuItem.Name = "registerBUGToolStripMenuItem";
-            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
+            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
             this.registerBUGToolStripMenuItem.Text = "Register BUG";
             this.registerBUGToolStripMenuItem.Click += new System.EventHandler(this.registerBUGToolStripMenuItem_Click);
             // 
@@ -484,37 +484,37 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox BugEntry;
         private System.Windows.Forms.PictureBox LogOut;
-        private System.Windows.Forms.PictureBox ProjectManage;
-        private System.Windows.Forms.PictureBox MemberManage;
-        private System.Windows.Forms.PictureBox UserManage;
         private System.Windows.Forms.PictureBox NEPALFLAG;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.MenuStrip menuStrip2;
-        private System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageUserToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageMemberToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem manageProjectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bugToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registerBUGToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem bUGSolutionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ToolStripMenuItem manageUSerRoleToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignMemberToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem currentuser;
         private System.Windows.Forms.ToolStripMenuItem guthubToolStripMenuItem;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.ToolStripMenuItem userToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem currentuser;
+        public System.Windows.Forms.PictureBox BugEntry;
+        public System.Windows.Forms.PictureBox ProjectManage;
+        public System.Windows.Forms.PictureBox MemberManage;
+        public System.Windows.Forms.PictureBox UserManage;
+        public System.Windows.Forms.ToolStripMenuItem memberToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem registerBUGToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
 

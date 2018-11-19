@@ -115,7 +115,7 @@ namespace BugTrackingSystem
             {
                 BugID = Convert.ToInt32(dgvBugEntryInformation.SelectedRows[0].Cells["bugId"].Value.ToString());
                 dateDate.Text = dgvBugEntryInformation.SelectedRows[0].Cells["bugIdentifiedDate"].Value.ToString();
-                cmbIdentifiedBy.Text = dgvBugEntryInformation.SelectedRows[0].Cells["projectName"].Value.ToString();
+                cmbIdentifiedBy.Text = dgvBugEntryInformation.SelectedRows[0].Cells["memberName"].Value.ToString();
                 cmbProject.Text = dgvBugEntryInformation.SelectedRows[0].Cells["projectName"].Value.ToString();
                 txtClassLibrary.Text = dgvBugEntryInformation.SelectedRows[0].Cells["classLibraryName"].Value.ToString();
                 txtClass.Text = dgvBugEntryInformation.SelectedRows[0].Cells["className"].Value.ToString();
