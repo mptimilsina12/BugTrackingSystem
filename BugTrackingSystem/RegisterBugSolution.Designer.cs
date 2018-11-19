@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterBugSolution));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlBugSolnInfo = new System.Windows.Forms.Panel();
             this.cmbBugDetails = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnExit = new System.Windows.Forms.Button();
@@ -52,7 +52,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvBugSolutionInformation = new System.Windows.Forms.DataGridView();
-            this.panel1.SuspendLayout();
+            this.pnlBugSolnInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
             this.panel4.SuspendLayout();
@@ -60,28 +60,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugSolutionInformation)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // pnlBugSolnInfo
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cmbBugDetails);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.txtSolutionDetails);
-            this.panel1.Controls.Add(this.label13);
-            this.panel1.Controls.Add(this.cmbProject);
-            this.panel1.Controls.Add(this.txtCode);
-            this.panel1.Controls.Add(this.label12);
-            this.panel1.Controls.Add(this.picSnap);
-            this.panel1.Controls.Add(this.cmbbugsolvedby);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.dateDate);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(5, 60);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1035, 492);
-            this.panel1.TabIndex = 16;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
+            this.pnlBugSolnInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBugSolnInfo.Controls.Add(this.cmbBugDetails);
+            this.pnlBugSolnInfo.Controls.Add(this.panel2);
+            this.pnlBugSolnInfo.Controls.Add(this.txtSolutionDetails);
+            this.pnlBugSolnInfo.Controls.Add(this.label13);
+            this.pnlBugSolnInfo.Controls.Add(this.cmbProject);
+            this.pnlBugSolnInfo.Controls.Add(this.txtCode);
+            this.pnlBugSolnInfo.Controls.Add(this.label12);
+            this.pnlBugSolnInfo.Controls.Add(this.picSnap);
+            this.pnlBugSolnInfo.Controls.Add(this.cmbbugsolvedby);
+            this.pnlBugSolnInfo.Controls.Add(this.label7);
+            this.pnlBugSolnInfo.Controls.Add(this.dateDate);
+            this.pnlBugSolnInfo.Controls.Add(this.label4);
+            this.pnlBugSolnInfo.Controls.Add(this.label2);
+            this.pnlBugSolnInfo.Controls.Add(this.label3);
+            this.pnlBugSolnInfo.Location = new System.Drawing.Point(5, 60);
+            this.pnlBugSolnInfo.Name = "pnlBugSolnInfo";
+            this.pnlBugSolnInfo.Size = new System.Drawing.Size(1035, 492);
+            this.pnlBugSolnInfo.TabIndex = 16;
+            this.pnlBugSolnInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint_1);
             // 
             // cmbBugDetails
             // 
@@ -92,6 +92,7 @@
             this.cmbBugDetails.Name = "cmbBugDetails";
             this.cmbBugDetails.Size = new System.Drawing.Size(278, 39);
             this.cmbBugDetails.TabIndex = 31;
+            this.cmbBugDetails.SelectedIndexChanged += new System.EventHandler(this.cmbBugDetails_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -125,6 +126,7 @@
             this.btnUpdate.TabIndex = 19;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
             // 
             // btnDel
             // 
@@ -135,6 +137,7 @@
             this.btnDel.TabIndex = 17;
             this.btnDel.Text = "DELETE";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click_1);
             // 
             // btnAdd
             // 
@@ -145,6 +148,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "ADD";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click_1);
             // 
             // txtSolutionDetails
             // 
@@ -175,6 +179,7 @@
             this.cmbProject.Name = "cmbProject";
             this.cmbProject.Size = new System.Drawing.Size(278, 39);
             this.cmbProject.TabIndex = 27;
+            this.cmbProject.SelectedIndexChanged += new System.EventHandler(this.cmbProject_SelectedIndexChanged_1);
             // 
             // txtCode
             // 
@@ -314,13 +319,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1056, 799);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlBugSolnInfo);
             this.Controls.Add(this.panel4);
             this.Name = "RegisterBugSolution";
             this.Text = "RegisterBugSolution";
             this.Load += new System.EventHandler(this.RegisterBugSolution_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlBugSolnInfo.ResumeLayout(false);
+            this.pnlBugSolnInfo.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).EndInit();
             this.panel4.ResumeLayout(false);
@@ -333,7 +338,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlBugSolnInfo;
         private System.Windows.Forms.TextBox txtSolutionDetails;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbProject;
