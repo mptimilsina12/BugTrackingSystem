@@ -84,7 +84,7 @@ namespace BugTrackingSystem
         {
             try
             {
-                memberId = Convert.ToInt32(dgvMemberInformation.SelectedRows[0].Cells["Id"].Value.ToString());
+                memberId = Convert.ToInt32(dgvMemberInformation.SelectedRows[0].Cells["memberId"].Value.ToString());
                 txtFname.Text = dgvMemberInformation.SelectedRows[0].Cells["memberName"].Value.ToString();
                txtAdd.Text = dgvMemberInformation.SelectedRows[0].Cells["memberAddress"].Value.ToString();
                 tctContact.Text = dgvMemberInformation.SelectedRows[0].Cells["contactNumber"].Value.ToString();

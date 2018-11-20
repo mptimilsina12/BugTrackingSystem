@@ -97,16 +97,16 @@ namespace DataAccessLayer
             }
             finally { conn.Close(); }
         }
-        public DataTable AllProjectsByDates(String StartDate, String EndDate)
+        public DataTable AllProjectsByDates(String projectStartDate, String projectEndDate)
         {
 
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("Select * from ProjectTable where StartDate>=@StartDate and  EndDate<=@EndDate", conn);
+                SqlCommand cmd = new SqlCommand("Select * from ProjectTable where projectStartDate>=@projectStartDate and  projectEndDate<=@projectEndDate", conn);
                 cmd.CommandType = CommandType.Text;
-                cmd.Parameters.AddWithValue("@StartDate", StartDate);
-                cmd.Parameters.AddWithValue("@EndDate", EndDate);
+                cmd.Parameters.AddWithValue("@projectStartDate", projectStartDate);
+                cmd.Parameters.AddWithValue("@projectEndDate", projectEndDate);
                 conn.Open();
                 SqlDataReader dr = cmd.ExecuteReader();
                 dt.Load(dr);
@@ -125,7 +125,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select m.memberName,ProjectName,BugId,BugDetails,ClassName,MethodName,BlockName,LineNumber from BugTable b,MemberTable m,ProjectTable p where m.memberId=b.memberId and b.ProjectId=p.ProjectId  and m.memberId=@memberId", conn);
+                SqlCommand cmd = new SqlCommand("select m.memberName,ProjectName,BugId,BugDetails,ClassName,MethodName,BlockName,LineNumber from BugEntryTable b,MemberTable m,ProjectTable p where m.memberId=b.memberId and b.ProjectId=p.ProjectId  and m.memberId=@memberId", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@memberId", memberId);
                 conn.Open();
@@ -146,7 +146,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select m.memberName,ProjectName,BugId,BugDetails,ClassName,MethodName,BlockName,LineNumber from BugTable b,MemberTable m,ProjectTable p where m.memberId=b.memberId and b.ProjectId=p.ProjectId  and p.ProjectId=@ProjectId", conn);
+                SqlCommand cmd = new SqlCommand("select m.memberName,ProjectName,BugId,BugDetails,ClassName,MethodName,BlockName,LineNumber from BugEntryTable b,MemberTable m,ProjectTable p where m.memberId=b.memberId and b.ProjectId=p.ProjectId  and p.ProjectId=@ProjectId", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ProjectId", ProjectId);
                 conn.Open();
@@ -167,7 +167,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select p.ProjectName,b.BugId,b.BugDetails,b.ClassName,b.MethodName,b.BlockName,b.LineNumber,s.SolutionDate,s.SolutionDetails from SolutionTable s,BugTable b,ProjectTable p where b.BugId=s.BugId and p.ProjectId=b.ProjectId and p.ProjectId=@ProjectId", conn);
+                SqlCommand cmd = new SqlCommand("select p.ProjectName,b.BugId,b.BugDetails,b.ClassName,b.MethodName,b.BlockName,b.LineNumber,s.SolutionDate,s.SolutionDetails from SolutionTable s,BugEntryTable b,ProjectTable p where b.BugId=s.BugId and p.ProjectId=b.ProjectId and p.ProjectId=@ProjectId", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@ProjectId", ProjectId);
                 conn.Open();
@@ -187,7 +187,7 @@ namespace DataAccessLayer
             try
             {
                 DataTable dt = new DataTable();
-                SqlCommand cmd = new SqlCommand("select p.ProjectName,b.BugId,b.BugDetails,b.ClassName,b.MethodName,b.BlockName,b.LineNumber,s.SolutionDate,s.SolutionDetails from SolutionTable s,BugTable b,ProjectTable p,MemberTable m where b.BugId=s.BugId and p.ProjectId=b.ProjectId and  b.memberId=m.memberId and m.memberId=@memberId", conn);
+                SqlCommand cmd = new SqlCommand("select p.ProjectName,b.BugId,b.BugDetails,b.ClassName,b.MethodName,b.BlockName,b.LineNumber,s.dateOfSolutionIdentified,s.SolutionDetails from BugSolutionTable s,BugEntryTable b,ProjectTable p,MemberTable m where b.BugId=s.BugId and p.ProjectId=b.ProjectId and  b.memberId=m.memberId and m.memberId=@memberId", conn);
                 cmd.CommandType = CommandType.Text;
                 cmd.Parameters.AddWithValue("@memberId", memberId);
                 conn.Open();

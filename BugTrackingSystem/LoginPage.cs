@@ -100,5 +100,10 @@ namespace BugTrackingSystem
 
             }
         }
+
+        private void LoginPage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

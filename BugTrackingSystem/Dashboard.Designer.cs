@@ -60,6 +60,11 @@
             this.bugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registerBUGToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bUGSolutionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reportToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.projectReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugByReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bugByMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.solutionByMemberToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -294,6 +299,7 @@
             this.memberToolStripMenuItem,
             this.projectToolStripMenuItem,
             this.bugToolStripMenuItem,
+            this.reportToolStripMenuItem1,
             this.reportToolStripMenuItem,
             this.helpToolStripMenuItem,
             this.logoutToolStripMenuItem});
@@ -390,7 +396,7 @@
             // 
             this.registerBUGToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.registerBUGToolStripMenuItem.Name = "registerBUGToolStripMenuItem";
-            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(216, 32);
+            this.registerBUGToolStripMenuItem.Size = new System.Drawing.Size(204, 32);
             this.registerBUGToolStripMenuItem.Text = "Register BUG";
             this.registerBUGToolStripMenuItem.Click += new System.EventHandler(this.registerBUGToolStripMenuItem_Click);
             // 
@@ -402,13 +408,57 @@
             this.bUGSolutionToolStripMenuItem.Text = "BUG Solution";
             this.bUGSolutionToolStripMenuItem.Click += new System.EventHandler(this.bUGSolutionToolStripMenuItem_Click);
             // 
+            // reportToolStripMenuItem1
+            // 
+            this.reportToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.projectReportToolStripMenuItem,
+            this.bugByReportToolStripMenuItem,
+            this.bugByMemberToolStripMenuItem,
+            this.solutionByMemberToolStripMenuItem});
+            this.reportToolStripMenuItem1.Font = new System.Drawing.Font("Segoe Marker", 16.2F, System.Drawing.FontStyle.Bold);
+            this.reportToolStripMenuItem1.Name = "reportToolStripMenuItem1";
+            this.reportToolStripMenuItem1.Size = new System.Drawing.Size(102, 37);
+            this.reportToolStripMenuItem1.Text = "Report";
+            // 
+            // projectReportToolStripMenuItem
+            // 
+            this.projectReportToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic);
+            this.projectReportToolStripMenuItem.Name = "projectReportToolStripMenuItem";
+            this.projectReportToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.projectReportToolStripMenuItem.Text = "Project Report";
+            this.projectReportToolStripMenuItem.Click += new System.EventHandler(this.projectReportToolStripMenuItem_Click);
+            // 
+            // bugByReportToolStripMenuItem
+            // 
+            this.bugByReportToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic);
+            this.bugByReportToolStripMenuItem.Name = "bugByReportToolStripMenuItem";
+            this.bugByReportToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.bugByReportToolStripMenuItem.Text = "Bug by Project";
+            this.bugByReportToolStripMenuItem.Click += new System.EventHandler(this.bugByReportToolStripMenuItem_Click);
+            // 
+            // bugByMemberToolStripMenuItem
+            // 
+            this.bugByMemberToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic);
+            this.bugByMemberToolStripMenuItem.Name = "bugByMemberToolStripMenuItem";
+            this.bugByMemberToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.bugByMemberToolStripMenuItem.Text = "Bug by Member";
+            this.bugByMemberToolStripMenuItem.Click += new System.EventHandler(this.bugByMemberToolStripMenuItem_Click);
+            // 
+            // solutionByMemberToolStripMenuItem
+            // 
+            this.solutionByMemberToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Italic);
+            this.solutionByMemberToolStripMenuItem.Name = "solutionByMemberToolStripMenuItem";
+            this.solutionByMemberToolStripMenuItem.Size = new System.Drawing.Size(267, 32);
+            this.solutionByMemberToolStripMenuItem.Text = "Solution by Member";
+            this.solutionByMemberToolStripMenuItem.Click += new System.EventHandler(this.solutionByMemberToolStripMenuItem_Click);
+            // 
             // reportToolStripMenuItem
             // 
             this.reportToolStripMenuItem.Font = new System.Drawing.Font("Segoe Marker", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.reportToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("reportToolStripMenuItem.Image")));
             this.reportToolStripMenuItem.Name = "reportToolStripMenuItem";
-            this.reportToolStripMenuItem.Size = new System.Drawing.Size(109, 37);
-            this.reportToolStripMenuItem.Text = "Report";
+            this.reportToolStripMenuItem.Size = new System.Drawing.Size(108, 37);
+            this.reportToolStripMenuItem.Text = "Search";
             this.reportToolStripMenuItem.Click += new System.EventHandler(this.reportToolStripMenuItem_Click);
             // 
             // helpToolStripMenuItem
@@ -515,6 +565,11 @@
         public System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem registerBUGToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reportToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem projectReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bugByReportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem bugByMemberToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem solutionByMemberToolStripMenuItem;
     }
 }
 

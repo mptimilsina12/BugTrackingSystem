@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AssistantClass.cs" />
+    <Compile Include="BugByMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BugByMember.Designer.cs">
+      <DependentUpon>BugByMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="BugEntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +64,12 @@
     </Compile>
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GetBugsByProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GetBugsByProject.Designer.cs">
+      <DependentUpon>GetBugsByProject.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm1.cs">
       <SubType>Form</SubType>
@@ -101,6 +114,12 @@
       <DependentUpon>MembersinProject.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
+    <Compile Include="ProjectReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProjectReport.Designer.cs">
+      <DependentUpon>ProjectReport.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterBugSolution.cs">
       <SubType>Form</SubType>
@@ -108,17 +127,29 @@
     <Compile Include="RegisterBugSolution.Designer.cs">
       <DependentUpon>RegisterBugSolution.cs</DependentUpon>
     </Compile>
-    <Compile Include="Report.cs">
+    <Compile Include="SearchBug.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Report.Designer.cs">
-      <DependentUpon>Report.cs</DependentUpon>
+    <Compile Include="SearchBug.Designer.cs">
+      <DependentUpon>SearchBug.cs</DependentUpon>
     </Compile>
+    <Compile Include="SolutionByMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SolutionByMember.Designer.cs">
+      <DependentUpon>SolutionByMember.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="BugByMember.resx">
+      <DependentUpon>BugByMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="BugEntryForm.resx">
       <DependentUpon>BugEntryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GetBugsByProject.resx">
+      <DependentUpon>GetBugsByProject.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm1.resx">
       <DependentUpon>LoginForm1.cs</DependentUpon>
@@ -141,6 +172,9 @@
     <EmbeddedResource Include="MembersinProject.resx">
       <DependentUpon>MembersinProject.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ProjectReport.resx">
+      <DependentUpon>ProjectReport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -154,8 +188,11 @@
     <EmbeddedResource Include="RegisterBugSolution.resx">
       <DependentUpon>RegisterBugSolution.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Report.resx">
-      <DependentUpon>Report.cs</DependentUpon>
+    <EmbeddedResource Include="SearchBug.resx">
+      <DependentUpon>SearchBug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SolutionByMember.resx">
+      <DependentUpon>SolutionByMember.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

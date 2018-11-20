@@ -12,9 +12,9 @@ using BusinessLogicLayer;
 
 namespace BugTrackingSystem
 {
-    public partial class Report : Form
+    public partial class SearchBug : Form
     {
-        public Report()
+        public SearchBug()
         {
             InitializeComponent();
         }

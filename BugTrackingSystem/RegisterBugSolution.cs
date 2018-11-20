@@ -26,7 +26,9 @@ namespace BugTrackingSystem
         BugEntryClass bugentryclass = new BugEntryClass();
         ProjectClass projectclass = new ProjectClass();
         MemberClass memberclass = new MemberClass();
-        BugSolutionClass bugsolnclass = new BugSolutionClass();
+        //BugSolutionClass bugsolnclass = new BugSolutionClass();
+        BugSolutionClass bugSolutionEntryClass = new BugSolutionClass();
+
         BusinessLogicClass businesslogicclass =new BusinessLogicClass();
       
 
@@ -208,13 +210,15 @@ namespace BugTrackingSystem
 
         private void RegisterBugSolution_Load(object sender, EventArgs e)
         {
-            
-            dgvBugSolutionInformation.DataSource = bugsolnclass.getAllBugSolutions();
+          //  dgvBugSolutionInformation.DataSource = bugsolnclass.getAllBugSolutions();
+            dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
 
-          //  cmbProject.DataSource = projectclass.getAllProjects();
-           // cmbProject.ValueMember = "projectId";
-         //   cmbProject.DisplayMember = "projectName";
-        //    cmbProject.SelectedIndex = -1;
+            //dgvBugSolutionInformation.DataSource = bugsolnclass.getAllBugSolutions();
+
+            //  cmbProject.DataSource = projectclass.getAllProjects();
+            // cmbProject.ValueMember = "projectId";
+            //   cmbProject.DisplayMember = "projectName";
+            //    cmbProject.SelectedIndex = -1;
 
             cmbBugDetails.DataSource = bugentryclass.getAllBugs();
             cmbBugDetails.ValueMember = "bugId";
@@ -240,8 +244,9 @@ namespace BugTrackingSystem
                 cmbbugsolvedby.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["memberName"].Value.ToString();
                 dateDate.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["dateOfSolutionIdentified"].Value.ToString();
                 cmbProject.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["projectName"].Value.ToString();
-                cmbBugDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["solutionDetails"].Value.ToString();              
-               MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
+                cmbBugDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["bugDetails"].Value.ToString();
+                txtSolutionDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["solutionDetails"].Value.ToString();
+                MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
                 picSnap.Image = Image.FromStream(memoryStream);
                 txtCode.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["codeAfterFixingBug"].Value.ToString();
             }
@@ -343,7 +348,7 @@ namespace BugTrackingSystem
                     AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
                     AssistantClass.makeFieldsBlank(picSnap);
 
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                    dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
                     dateDate.Focus();
                 }
                 else
@@ -414,18 +419,18 @@ namespace BugTrackingSystem
         {
             try
             {
-                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Text, 2);
+                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Text, 3);
                 if (result == true)
                 {
                     MessageBox.Show("EXISTING BUG SOLUTION HAS BEEN DELETED");
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                    dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
                     AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
                 }
                 else
                 {
 
                     MessageBox.Show("ERROR IN DELETING EXISTING BUG SOLUTION");
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                    dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
                     AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
                 }
             }

@@ -1,6 +1,6 @@
 ﻿namespace BugTrackingSystem
 {
-    partial class Report
+    partial class SearchBug
     {
         /// <summary>
         /// Required designer variable.
@@ -33,14 +33,14 @@
             this.label13 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblTotalProjects = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblTotalMembers = new System.Windows.Forms.Label();
-            this.lblTotalRegBug = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblTotalSolvedBug = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblTotalSolvedBug = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.lblTotalRegBug = new System.Windows.Forms.Label();
+            this.lblTotalMembers = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblTotalProjects = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -107,65 +107,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Get all the required bug informations here:-";
             // 
-            // lblTotalProjects
+            // label4
             // 
-            this.lblTotalProjects.AutoSize = true;
-            this.lblTotalProjects.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalProjects.Location = new System.Drawing.Point(239, 26);
-            this.lblTotalProjects.Name = "lblTotalProjects";
-            this.lblTotalProjects.Size = new System.Drawing.Size(29, 33);
-            this.lblTotalProjects.TabIndex = 34;
-            this.lblTotalProjects.Text = "0";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(299, 71);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(220, 33);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "Total Bug Solved:";
-            // 
-            // lblTotalMembers
-            // 
-            this.lblTotalMembers.AutoSize = true;
-            this.lblTotalMembers.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalMembers.Location = new System.Drawing.Point(239, 71);
-            this.lblTotalMembers.Name = "lblTotalMembers";
-            this.lblTotalMembers.Size = new System.Drawing.Size(29, 33);
-            this.lblTotalMembers.TabIndex = 35;
-            this.lblTotalMembers.Text = "0";
-            // 
-            // lblTotalRegBug
-            // 
-            this.lblTotalRegBug.AutoSize = true;
-            this.lblTotalRegBug.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalRegBug.Location = new System.Drawing.Point(618, 26);
-            this.lblTotalRegBug.Name = "lblTotalRegBug";
-            this.lblTotalRegBug.Size = new System.Drawing.Size(29, 33);
-            this.lblTotalRegBug.TabIndex = 36;
-            this.lblTotalRegBug.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(299, 26);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(266, 33);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Total Bug Registered:";
-            // 
-            // lblTotalSolvedBug
-            // 
-            this.lblTotalSolvedBug.AutoSize = true;
-            this.lblTotalSolvedBug.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotalSolvedBug.Location = new System.Drawing.Point(618, 71);
-            this.lblTotalSolvedBug.Name = "lblTotalSolvedBug";
-            this.lblTotalSolvedBug.Size = new System.Drawing.Size(29, 33);
-            this.lblTotalSolvedBug.TabIndex = 37;
-            this.lblTotalSolvedBug.Text = "0";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(7, 26);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(183, 33);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Total Projects:";
             // 
             // label3
             // 
@@ -177,17 +127,67 @@
             this.label3.TabIndex = 29;
             this.label3.Text = "Total Members:";
             // 
-            // label4
+            // lblTotalSolvedBug
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(7, 26);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(183, 33);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Total Projects:";
+            this.lblTotalSolvedBug.AutoSize = true;
+            this.lblTotalSolvedBug.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalSolvedBug.Location = new System.Drawing.Point(618, 71);
+            this.lblTotalSolvedBug.Name = "lblTotalSolvedBug";
+            this.lblTotalSolvedBug.Size = new System.Drawing.Size(29, 33);
+            this.lblTotalSolvedBug.TabIndex = 37;
+            this.lblTotalSolvedBug.Text = "0";
             // 
-            // Report
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(299, 26);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(266, 33);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Total Bug Registered:";
+            // 
+            // lblTotalRegBug
+            // 
+            this.lblTotalRegBug.AutoSize = true;
+            this.lblTotalRegBug.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalRegBug.Location = new System.Drawing.Point(618, 26);
+            this.lblTotalRegBug.Name = "lblTotalRegBug";
+            this.lblTotalRegBug.Size = new System.Drawing.Size(29, 33);
+            this.lblTotalRegBug.TabIndex = 36;
+            this.lblTotalRegBug.Text = "0";
+            // 
+            // lblTotalMembers
+            // 
+            this.lblTotalMembers.AutoSize = true;
+            this.lblTotalMembers.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalMembers.Location = new System.Drawing.Point(239, 71);
+            this.lblTotalMembers.Name = "lblTotalMembers";
+            this.lblTotalMembers.Size = new System.Drawing.Size(29, 33);
+            this.lblTotalMembers.TabIndex = 35;
+            this.lblTotalMembers.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(299, 71);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(220, 33);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "Total Bug Solved:";
+            // 
+            // lblTotalProjects
+            // 
+            this.lblTotalProjects.AutoSize = true;
+            this.lblTotalProjects.Font = new System.Drawing.Font("Arial Unicode MS", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalProjects.Location = new System.Drawing.Point(239, 26);
+            this.lblTotalProjects.Name = "lblTotalProjects";
+            this.lblTotalProjects.Size = new System.Drawing.Size(29, 33);
+            this.lblTotalProjects.TabIndex = 34;
+            this.lblTotalProjects.Text = "0";
+            // 
+            // SearchBug
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -199,9 +199,9 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Report";
+            this.Name = "SearchBug";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Report";
+            this.Text = "SearchBug";
             this.Load += new System.EventHandler(this.Report_Load);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvReport)).EndInit();

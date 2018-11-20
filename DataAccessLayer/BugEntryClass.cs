@@ -37,7 +37,7 @@ namespace DataAccessLayer
                 cmd.Parameters.AddWithValue("@classLibraryName", classLibraryName);
                 cmd.Parameters.AddWithValue("@className", className);
                 cmd.Parameters.AddWithValue("@methodName", methodName);
-                cmd.Parameters.AddWithValue("@blockName", blockName);
+                cmd.Parameters.AddWithValue("@blockName", blockName); 
                 cmd.Parameters.AddWithValue("@lineNumber", lineNumber);
                 cmd.Parameters.AddWithValue("@bugDetails", bugDetails);
                 cmd.Parameters.AddWithValue("@snapShotOfBugMessage", snapShotOfBugMessage);
