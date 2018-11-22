@@ -45,7 +45,7 @@ namespace BugTrackingSystem
                 if (Role == "Project Manager")
                 {
                     Dashboard DAS = new Dashboard();
-                    DAS.currentuser.Text = txtPassword.Text;
+                    DAS.currentuser.Text = txtUserName.Text;
                     this.Hide();
                     DAS.Show();
                 }
@@ -57,7 +57,7 @@ namespace BugTrackingSystem
                     DAS.UserManage.Enabled = false;
                     DAS.MemberManage.Enabled = false;
                     this.Hide();
-                    DAS.currentuser.Text = txtPassword.Text;
+                    DAS.currentuser.Text = txtUserName.Text;
                     DAS.Show();
                 }
                 if (Role == "Tester")
@@ -70,8 +70,12 @@ namespace BugTrackingSystem
                     DAS.UserManage.Enabled = false;
                     DAS.MemberManage.Enabled = false;
                     DAS.BugEntry.Enabled = false;
+                    RegisterBugSolution RBS = new RegisterBugSolution(); this.Hide();
+                    RBS.btnAdd.Enabled = false;
+                    RBS.btnUpdate.Enabled = false;
+                    RBS.btnDel.Enabled = false;
                     DAS.Show();
-                    DAS.currentuser.Text = txtPassword.Text;
+                    DAS.currentuser.Text = txtUserName.Text;
                     this.Hide();
                 }
             }
@@ -85,7 +89,7 @@ namespace BugTrackingSystem
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void cbShowPassword_CheckedChanged(object sender, EventArgs e)

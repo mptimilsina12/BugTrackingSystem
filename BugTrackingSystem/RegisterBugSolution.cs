@@ -440,5 +440,10 @@ namespace BugTrackingSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void cmbbugsolvedby_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

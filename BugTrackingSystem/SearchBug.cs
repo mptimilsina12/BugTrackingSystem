@@ -45,5 +45,10 @@ namespace BugTrackingSystem
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dgvReport_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

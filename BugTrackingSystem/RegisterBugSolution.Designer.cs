@@ -223,6 +223,7 @@
             this.cmbbugsolvedby.Name = "cmbbugsolvedby";
             this.cmbbugsolvedby.Size = new System.Drawing.Size(278, 39);
             this.cmbbugsolvedby.TabIndex = 16;
+            this.cmbbugsolvedby.SelectedIndexChanged += new System.EventHandler(this.cmbbugsolvedby_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -355,11 +356,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnDel;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView dgvBugSolutionInformation;
         private System.Windows.Forms.ComboBox cmbBugDetails;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Button btnDel;
+        public System.Windows.Forms.Button btnAdd;
     }
 }

@@ -89,7 +89,7 @@ namespace BugTrackingSystem
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             LoginPage LP = new LoginPage();
             LP.Show();
         }
@@ -115,7 +115,7 @@ namespace BugTrackingSystem
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            Application.Exit();
             LoginPage LP = new LoginPage();
             LP.Show();
         }
