@@ -36,7 +36,6 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlBugDetails = new System.Windows.Forms.Panel();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtBugDetails = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.txtCode = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).BeginInit();
             this.pnlBugDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
@@ -163,16 +163,6 @@
             this.pnlBugDetails.Name = "pnlBugDetails";
             this.pnlBugDetails.Size = new System.Drawing.Size(1327, 422);
             this.pnlBugDetails.TabIndex = 12;
-            // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
-            this.txtCode.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(16, 172);
-            this.txtCode.Multiline = true;
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(529, 236);
-            this.txtCode.TabIndex = 26;
             // 
             // label12
             // 
@@ -431,6 +421,15 @@
             this.panel4.Size = new System.Drawing.Size(1387, 55);
             this.panel4.TabIndex = 15;
             // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCode.Location = new System.Drawing.Point(15, 171);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(544, 231);
+            this.txtCode.TabIndex = 26;
+            this.txtCode.Text = "";
+            // 
             // BugEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -490,8 +489,8 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbProject;
         private System.Windows.Forms.PictureBox picSnap;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBrowse;
+        private System.Windows.Forms.RichTextBox txtCode;
     }
 }

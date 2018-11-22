@@ -19,7 +19,11 @@ namespace BugTrackingSystem
         }
 
         UserClass uc = new UserClass();
-     
+        BugSolutionClass BSC = new BugSolutionClass();
+        RegisterBugSolution RBS = new RegisterBugSolution();
+        Dashboard DAS = new Dashboard();
+
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -44,14 +48,12 @@ namespace BugTrackingSystem
 
                 if (Role == "Project Manager")
                 {
-                    Dashboard DAS = new Dashboard();
                     DAS.currentuser.Text = txtUserName.Text;
                     this.Hide();
                     DAS.Show();
                 }
                 if (Role == "Developer")
                 {
-                    Dashboard DAS = new Dashboard();
                     DAS.userToolStripMenuItem.Enabled = false;
                     DAS.memberToolStripMenuItem.Enabled = false;
                     DAS.UserManage.Enabled = false;
@@ -62,7 +64,6 @@ namespace BugTrackingSystem
                 }
                 if (Role == "Tester")
                 {
-                    Dashboard DAS = new Dashboard(); this.Hide();
                     DAS.userToolStripMenuItem.Enabled = false;
                     DAS.memberToolStripMenuItem.Enabled = false;
                     DAS.projectToolStripMenuItem.Enabled = false;
@@ -70,13 +71,14 @@ namespace BugTrackingSystem
                     DAS.UserManage.Enabled = false;
                     DAS.MemberManage.Enabled = false;
                     DAS.BugEntry.Enabled = false;
-                    RegisterBugSolution RBS = new RegisterBugSolution(); this.Hide();
-                    RBS.btnAdd.Enabled = false;
-                    RBS.btnUpdate.Enabled = false;
-                    RBS.btnDel.Enabled = false;
                     DAS.Show();
                     DAS.currentuser.Text = txtUserName.Text;
                     this.Hide();
+                    RBS.btnAdd.Visible = false;
+                    RBS.btnUpdate.Visible = false;
+                    RBS.btnDel.Visible = false;
+                
+
                 }
             }
             catch (Exception)
@@ -84,6 +86,7 @@ namespace BugTrackingSystem
 
                 MessageBox.Show("Invalid User Name or Password");
             }
+            
 
         }
 

@@ -248,7 +248,7 @@ namespace BugTrackingSystem
                 txtSolutionDetails.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["solutionDetails"].Value.ToString();
                 MemoryStream memoryStream = new MemoryStream((byte[])dgvBugSolutionInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
                 picSnap.Image = Image.FromStream(memoryStream);
-                txtCode.Text = dgvBugSolutionInformation.SelectedRows[0].Cells["codeAfterFixingBug"].Value.ToString();
+                txtCode.Rtf = dgvBugSolutionInformation.SelectedRows[0].Cells["codeAfterFixingBug"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -319,7 +319,7 @@ namespace BugTrackingSystem
                     MessageBox.Show("Please provide the bug solution");
                     txtSolutionDetails.Focus();
                 }
-                else if (txtCode.Text
+                else if (txtCode.Rtf
                     == "")
                 {
                     MessageBox.Show("Please method the block which was modified after solving bug");
@@ -341,7 +341,7 @@ namespace BugTrackingSystem
         {
             try
             {
-                bool result = businesslogicclass.manageBugSolutions(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Text, 1);
+                bool result = businesslogicclass.manageBugSolutions(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf, 1);
                 if (result == true)
                 {
                     MessageBox.Show("NEW BUG SOLUTION HAS BEEN REGISTERED");
@@ -393,7 +393,7 @@ namespace BugTrackingSystem
         {
             try
             {
-                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Text,2);
+                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf,2);
                 if (result == true)
                 {
                     MessageBox.Show("BUG SOLUTION HAS BEEN MODIFIED");
@@ -419,7 +419,7 @@ namespace BugTrackingSystem
         {
             try
             {
-                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Text, 3);
+                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf, 3);
                 if (result == true)
                 {
                     MessageBox.Show("EXISTING BUG SOLUTION HAS BEEN DELETED");

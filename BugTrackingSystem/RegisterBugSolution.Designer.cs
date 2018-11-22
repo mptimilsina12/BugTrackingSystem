@@ -39,7 +39,6 @@
             this.txtSolutionDetails = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbProject = new System.Windows.Forms.ComboBox();
-            this.txtCode = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.picSnap = new System.Windows.Forms.PictureBox();
             this.cmbbugsolvedby = new System.Windows.Forms.ComboBox();
@@ -52,6 +51,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvBugSolutionInformation = new System.Windows.Forms.DataGridView();
+            this.txtCode = new System.Windows.Forms.RichTextBox();
             this.pnlBugSolnInfo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
@@ -63,12 +63,12 @@
             // pnlBugSolnInfo
             // 
             this.pnlBugSolnInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBugSolnInfo.Controls.Add(this.txtCode);
             this.pnlBugSolnInfo.Controls.Add(this.cmbBugDetails);
             this.pnlBugSolnInfo.Controls.Add(this.panel2);
             this.pnlBugSolnInfo.Controls.Add(this.txtSolutionDetails);
             this.pnlBugSolnInfo.Controls.Add(this.label13);
             this.pnlBugSolnInfo.Controls.Add(this.cmbProject);
-            this.pnlBugSolnInfo.Controls.Add(this.txtCode);
             this.pnlBugSolnInfo.Controls.Add(this.label12);
             this.pnlBugSolnInfo.Controls.Add(this.picSnap);
             this.pnlBugSolnInfo.Controls.Add(this.cmbbugsolvedby);
@@ -180,16 +180,6 @@
             this.cmbProject.Size = new System.Drawing.Size(278, 39);
             this.cmbProject.TabIndex = 27;
             this.cmbProject.SelectedIndexChanged += new System.EventHandler(this.cmbProject_SelectedIndexChanged_1);
-            // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
-            this.txtCode.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCode.Location = new System.Drawing.Point(212, 253);
-            this.txtCode.Multiline = true;
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(667, 230);
-            this.txtCode.TabIndex = 26;
             // 
             // label12
             // 
@@ -314,6 +304,15 @@
             this.dgvBugSolutionInformation.TabIndex = 0;
             this.dgvBugSolutionInformation.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBugSolutionInformation_CellClick);
             // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCode.Location = new System.Drawing.Point(212, 268);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(672, 215);
+            this.txtCode.TabIndex = 32;
+            this.txtCode.Text = "";
+            // 
             // RegisterBugSolution
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -343,7 +342,6 @@
         private System.Windows.Forms.TextBox txtSolutionDetails;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbProject;
-        private System.Windows.Forms.TextBox txtCode;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.PictureBox picSnap;
         private System.Windows.Forms.ComboBox cmbbugsolvedby;
@@ -362,5 +360,6 @@
         public System.Windows.Forms.Button btnUpdate;
         public System.Windows.Forms.Button btnDel;
         public System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.RichTextBox txtCode;
     }
 }

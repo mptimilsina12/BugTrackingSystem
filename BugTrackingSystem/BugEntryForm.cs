@@ -85,7 +85,7 @@ namespace BugTrackingSystem
             try
             {
 
-                bool result = businessligicClass.manageBugs(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Text, 1);
+                bool result = businessligicClass.manageBugs(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Rtf, 1);
                 if (result == true)
                 {
                     MessageBox.Show("NEW BUG RECORD HAS BEEN ADDED");
@@ -125,7 +125,7 @@ namespace BugTrackingSystem
                 txtBugDetails.Text = dgvBugEntryInformation.SelectedRows[0].Cells["bugDetails"].Value.ToString();
                 MemoryStream memoryStream = new MemoryStream((byte[])dgvBugEntryInformation.SelectedRows[0].Cells["snapShotOfBugMessage"].Value);
                 picSnap.Image = Image.FromStream(memoryStream);
-                txtCode.Text = dgvBugEntryInformation.SelectedRows[0].Cells["codeContainingBug"].Value.ToString();
+                txtCode.Rtf = dgvBugEntryInformation.SelectedRows[0].Cells["codeContainingBug"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -139,7 +139,7 @@ namespace BugTrackingSystem
             try
             {
 
-                bool result = businessligicClass.manageBugs(BugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Text, 2);
+                bool result = businessligicClass.manageBugs(BugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Rtf, 2);
                 if (result == true)
                 {
                     MessageBox.Show("EXISTING BUG RECORD HAS BEEN UPDATED");
@@ -170,7 +170,7 @@ namespace BugTrackingSystem
             try
             {
 
-                bool result = businessligicClass.manageBugs(BugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Text, 3);
+                bool result = businessligicClass.manageBugs(BugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbIdentifiedBy.SelectedValue.ToString()), Convert.ToInt32(cmbProject.SelectedValue.ToString()), txtClassLibrary.Text, txtClass.Text, txtMethod.Text, txtBlock.Text, txtLineNumber.Text, txtBugDetails.Text, AssistantClass.imageConverter(picSnap), txtCode.Rtf, 3);
                 if (result == true)
                 {
                     MessageBox.Show("EXISTING BUG RECORD HAS BEEN DELETED");
