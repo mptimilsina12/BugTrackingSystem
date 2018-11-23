@@ -288,15 +288,10 @@ namespace BugTrackingSystem
             }
             catch (Exception)
             {
-
-
             }
-
-
         }
         public void AddBugSolution()
         {
-
             try
             {
                 if (dateDate.Text == "")
@@ -339,33 +334,47 @@ namespace BugTrackingSystem
 
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
-            try
+            
+
+            if (cmbProject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (dateDate.Text == "")
+                MessageBox.Show("Please Select Date");
+            else if (cmbBugDetails.Text == "")
+                MessageBox.Show("Please Select Big Details");
+            else if (cmbbugsolvedby.Text == "")
+                MessageBox.Show("Please select Member NAme");
+            else if (txtCode.Rtf == "")
+                MessageBox.Show("Please Provide Code");
+            else if (picSnap.Image == null)
+                MessageBox.Show("Please Upload Screenshot of Bug Occured");
+            else
             {
-                bool result = businesslogicclass.manageBugSolutions(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf, 1);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("NEW BUG SOLUTION HAS BEEN REGISTERED");
-                    AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
-                    AssistantClass.makeFieldsBlank(picSnap);
+                    bool result = businesslogicclass.manageBugSolutions(0, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW BUG SOLUTION HAS BEEN REGISTERED");
+                        AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                        AssistantClass.makeFieldsBlank(picSnap);
 
-                    dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
-                    dateDate.Focus();
+                        dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
+                        dateDate.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN REGISTERING BUG SOLUTION");
+                        dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                        AssistantClass.makeFieldsBlank(picSnap);
+                        dateDate.Focus();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-
-                    MessageBox.Show("ERROR IN REGISTERING BUG SOLUTION");
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
-                    AssistantClass.makeFieldsBlank(picSnap);
-
-                    dateDate.Focus();
+                    MessageBox.Show(ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -380,8 +389,6 @@ namespace BugTrackingSystem
             }
             catch (NullReferenceException)
             {
-
-
             }
             catch (Exception ex)
             {
@@ -391,27 +398,42 @@ namespace BugTrackingSystem
 
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            try
+            if (cmbProject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (dateDate.Text == "")
+                MessageBox.Show("Please Select Date");
+            else if (cmbBugDetails.Text == "")
+                MessageBox.Show("Please Select Big Details");
+            else if (cmbbugsolvedby.Text == "")
+                MessageBox.Show("Please select Member NAme");
+            else if (txtCode.Rtf == "")
+                MessageBox.Show("Please Provide Code");
+            else if (picSnap.Image == null)
+                MessageBox.Show("Please Upload Screenshot of Bug Occured");
+            else
             {
-                bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf,2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("BUG SOLUTION HAS BEEN MODIFIED");
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                    bool result = businesslogicclass.manageBugSolutions(RegBugID, Convert.ToDateTime(dateDate.Text), Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbBugDetails.SelectedValue.ToString()), Convert.ToInt32(cmbbugsolvedby.SelectedValue.ToString()), txtSolutionDetails.Text, txtCode.Rtf, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("BUG SOLUTION HAS BEEN MODIFIED");
+                        dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                    }
+                    else
+                    {
+
+                        MessageBox.Show("ERROR IN MODIFYING BUG SOLUTION");
+                        dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
+                        AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
 
-                    MessageBox.Show("ERROR IN MODIFYING BUG SOLUTION");
-                    dgvBugSolutionInformation.DataSource = bugentryclass.getAllBugs();
-                    AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
+                    MessageBox.Show(ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
             }
         }
 
@@ -428,7 +450,6 @@ namespace BugTrackingSystem
                 }
                 else
                 {
-
                     MessageBox.Show("ERROR IN DELETING EXISTING BUG SOLUTION");
                     dgvBugSolutionInformation.DataSource = bugSolutionEntryClass.getAllBugSolutions();
                     AssistantClass.makeFieldsBlank(pnlBugSolnInfo);
@@ -436,7 +457,6 @@ namespace BugTrackingSystem
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }

@@ -36,6 +36,7 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.pnlBugDetails = new System.Windows.Forms.Panel();
+            this.txtCode = new System.Windows.Forms.RichTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.txtBugDetails = new System.Windows.Forms.TextBox();
@@ -61,7 +62,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.txtCode = new System.Windows.Forms.RichTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBugEntryInformation)).BeginInit();
             this.pnlBugDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSnap)).BeginInit();
@@ -163,6 +163,15 @@
             this.pnlBugDetails.Name = "pnlBugDetails";
             this.pnlBugDetails.Size = new System.Drawing.Size(1327, 422);
             this.pnlBugDetails.TabIndex = 12;
+            // 
+            // txtCode
+            // 
+            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
+            this.txtCode.Location = new System.Drawing.Point(15, 171);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(544, 231);
+            this.txtCode.TabIndex = 26;
+            this.txtCode.Text = "";
             // 
             // label12
             // 
@@ -361,7 +370,7 @@
             // btnDel
             // 
             this.btnDel.Font = new System.Drawing.Font("Arial Unicode MS", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDel.Location = new System.Drawing.Point(717, 4);
+            this.btnDel.Location = new System.Drawing.Point(717, -1);
             this.btnDel.Name = "btnDel";
             this.btnDel.Size = new System.Drawing.Size(248, 38);
             this.btnDel.TabIndex = 17;
@@ -421,15 +430,6 @@
             this.panel4.Size = new System.Drawing.Size(1387, 55);
             this.panel4.TabIndex = 15;
             // 
-            // txtCode
-            // 
-            this.txtCode.BackColor = System.Drawing.SystemColors.Info;
-            this.txtCode.Location = new System.Drawing.Point(15, 171);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(544, 231);
-            this.txtCode.TabIndex = 26;
-            this.txtCode.Text = "";
-            // 
             // BugEntryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -464,7 +464,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Panel pnlBugDetails;
         private System.Windows.Forms.TextBox txtMethod;
         private System.Windows.Forms.TextBox txtClass;
@@ -474,9 +473,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtClassLibrary;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel4;
@@ -492,5 +489,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnBrowse;
         private System.Windows.Forms.RichTextBox txtCode;
+        public System.Windows.Forms.Button btnUpdate;
+        public System.Windows.Forms.Button btnDel;
+        public System.Windows.Forms.Button btnAdd;
     }
 }

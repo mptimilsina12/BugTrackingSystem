@@ -44,6 +44,21 @@ namespace DataAccessLayer
                 conn.Close();
             }
         }
+        //public DataTable GetUserTypeByUserName(String Username)
+        //{
+
+        //    SqlCommand cmd = new SqlCommand("select userRoleId from UserTable where userName=@userName", conn);
+        //    cmd.CommandType = CommandType.Text;
+        //    cmd.Parameters.AddWithValue("@userName", Username);
+        //    conn.Open();
+        //    SqlDataReader dr = cmd.ExecuteReader();
+        //    DataTable dt = new DataTable();
+        //    dt.Load(dr);
+        //    conn.Close();
+        //    return dt;
+
+        //}
+
         public DataTable getAllUsers()
         {
             try

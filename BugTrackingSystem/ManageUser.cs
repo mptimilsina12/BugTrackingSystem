@@ -50,10 +50,25 @@ namespace BugTrackingSystem
             cmbUserRole.DisplayMember = "userRole";
             cmbUserRole.SelectedIndex = -1;
         }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            if (cmbUserRole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (cmbFullName.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtUserName.Text == "")
+                MessageBox.Show("Please Provide username");
+            else if (txtPassword.Text == "")
+                MessageBox.Show("Please Provide Password");
 
+            else if (txtCPassword.Text == "")
+                MessageBox.Show("Please Provide Confirm Password");
+
+            else if (txtCPassword.Text != txtPassword.Text)
+                MessageBox.Show("Password didnot Match");
+          
+            else
+            {            
             try
             {
                 bool result = businessLogicClass.manageUsers(0, Convert.ToInt32(cmbUserRole.SelectedValue.ToString()), Convert.ToInt32(cmbFullName.SelectedValue.ToString()), txtUserName.Text, txtPassword.Text, 1);
@@ -76,29 +91,50 @@ namespace BugTrackingSystem
                 MessageBox.Show(ex.Message);
             }
         }
+        }
+
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bool result = businessLogicClass.manageUsers(userId, Convert.ToInt32(cmbUserRole.SelectedValue.ToString()), Convert.ToInt32(cmbFullName.SelectedValue.ToString()), txtUserName.Text, txtPassword.Text, 2);
-                if (result == true)
-                {
-                    MessageBox.Show("NEW USER HAS BEEN UPDATED");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(groupBox1);
-                }
-                else
-                {
-                    MessageBox.Show("ERROR ON ADDING NEW UPDAED");
-                    dgvUserInformation.DataSource = userClass.getAllUsers();
-                    AssistantClass.makeFieldsBlank(groupBox1);
-                }
-            }
-            catch (Exception ex)
+            if (cmbUserRole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (cmbFullName.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (txtUserName.Text == "")
+                MessageBox.Show("Please Provide username");
+            else if (txtPassword.Text == "")
+                MessageBox.Show("Please Provide Password");
+
+            else if (txtCPassword.Text == "")
+                MessageBox.Show("Please Provide Confirm Password");
+
+            else if (txtCPassword.Text != txtPassword.Text)
+                MessageBox.Show("Password didnot Match");
+
+            else
             {
 
-                MessageBox.Show(ex.Message);
+                try
+                {
+                    bool result = businessLogicClass.manageUsers(userId, Convert.ToInt32(cmbUserRole.SelectedValue.ToString()), Convert.ToInt32(cmbFullName.SelectedValue.ToString()), txtUserName.Text, txtPassword.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER HAS BEEN UPDATED");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(groupBox1);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON ADDING NEW UPDAED");
+                        dgvUserInformation.DataSource = userClass.getAllUsers();
+                        AssistantClass.makeFieldsBlank(groupBox1);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

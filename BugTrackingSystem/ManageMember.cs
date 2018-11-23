@@ -105,56 +105,100 @@ namespace BugTrackingSystem
         //Add Member Details
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
-            {
-                bool result = businessLogicClass.manageMembers(0, txtFname.Text, txtAdd.Text, tctContact.Text, txtEmail.Text, cmbGender.Text, Convert.ToDateTime(dateDOB.Text), Convert.ToDateTime(dateDOJ.Text), txtDescription.Text, AssistantClass.imageConverter(picBrowse), 1);
-                if (result == true)
-                {
-                    MessageBox.Show("NEW MEMBER HAS SUCCESSFULLY CREATED");
-                    dgvMemberInformation.DataSource = memberClass.getAllMembers();
-                    AssistantClass.makeFieldsBlank(gbMemberDetails);
-                    picBrowse.Image = null;
-                }
-                else
-                {
-                    MessageBox.Show("ERROR IN CREATING MEMBER");
-                    dgvMemberInformation.DataSource = memberClass.getAllMembers();
-                    AssistantClass.makeFieldsBlank(gbMemberDetails);
-                    picBrowse.Image = null;
-                }
-            }
-            catch (Exception ex)
-            {
+            if (txtFname.Text == "")
+                MessageBox.Show("Please Select Full Name");
+            else if (txtAdd.Text == "")
+                MessageBox.Show("Please Provide Address");
+            else if (tctContact.Text == "")
+                MessageBox.Show("Please Provide Contact Details");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Please Provide Email Address");
+            else if (cmbGender.Text == "")
+                MessageBox.Show("Please Select Gender");
+            else if (dateDOB.Text == "")
+                MessageBox.Show("Please Provide Date of Birth");
+            else if (dateDOJ.Text == "")
+                MessageBox.Show("Please Provide DAte of Join");
+            else if (picBrowse.Image == null)
+                MessageBox.Show("Please Upload");
 
-                MessageBox.Show(ex.Message);
+            else
+            {
+                try
+                {
+                    bool result = businessLogicClass.manageMembers(0, txtFname.Text, txtAdd.Text, tctContact.Text, txtEmail.Text, cmbGender.Text, Convert.ToDateTime(dateDOB.Text), Convert.ToDateTime(dateDOJ.Text), txtDescription.Text, AssistantClass.imageConverter(picBrowse), 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW MEMBER HAS SUCCESSFULLY CREATED");
+                        dgvMemberInformation.DataSource = memberClass.getAllMembers();
+                        AssistantClass.makeFieldsBlank(gbMemberDetails);
+                        picBrowse.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN CREATING MEMBER");
+                        dgvMemberInformation.DataSource = memberClass.getAllMembers();
+                        AssistantClass.makeFieldsBlank(gbMemberDetails);
+                        picBrowse.Image = null;
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
         // Update Member Details
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            try
-            {
-                bool result = businessLogicClass.manageMembers(memberId, txtFname.Text, txtAdd.Text, tctContact.Text, txtEmail.Text, cmbGender.Text, Convert.ToDateTime(dateDOB.Text), Convert.ToDateTime(dateDOJ.Text), txtDescription.Text, AssistantClass.imageConverter(picBrowse), 2);
-                if (result == true)
-                {
-                    MessageBox.Show("MEMBER HAS BEEN SUCCESSFULLY UPDATED");
-                    dgvMemberInformation.DataSource = memberClass.getAllMembers();
-                    AssistantClass.makeFieldsBlank(gbMemberDetails);
-                    picBrowse.Image = null;
-                }
-                else
-                {
-                    MessageBox.Show("ERROR IN UPDATING MEMBER");
-                    dgvMemberInformation.DataSource = memberClass.getAllMembers();
-                    AssistantClass.makeFieldsBlank(gbMemberDetails);
-                    picBrowse.Image = null;
+            if (txtFname.Text == "")
+                MessageBox.Show("Please Select Full Name");
+            else if (txtAdd.Text == "")
+                MessageBox.Show("Please Provide Address");
+            else if (tctContact.Text == "")
+                MessageBox.Show("Please Provide Contact Details");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else if (txtEmail.Text == "")
+                MessageBox.Show("Please Provide Email Address");
+            else if (cmbGender.Text == "")
+                MessageBox.Show("Please Select Gender");
+            else if (dateDOB.Text == "")
+                MessageBox.Show("Please Provide Date of Birth");
+            else if (dateDOJ.Text == "")
+                MessageBox.Show("Please Provide DAte of Join");
+            else if (picBrowse.Image == null)
+                MessageBox.Show("Please Upload");
 
-                }
-            }
-            catch (Exception ex)
+            else
             {
+                try
+                {
+                    bool result = businessLogicClass.manageMembers(memberId, txtFname.Text, txtAdd.Text, tctContact.Text, txtEmail.Text, cmbGender.Text, Convert.ToDateTime(dateDOB.Text), Convert.ToDateTime(dateDOJ.Text), txtDescription.Text, AssistantClass.imageConverter(picBrowse), 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("MEMBER HAS BEEN SUCCESSFULLY UPDATED");
+                        dgvMemberInformation.DataSource = memberClass.getAllMembers();
+                        AssistantClass.makeFieldsBlank(gbMemberDetails);
+                        picBrowse.Image = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN UPDATING MEMBER");
+                        dgvMemberInformation.DataSource = memberClass.getAllMembers();
+                        AssistantClass.makeFieldsBlank(gbMemberDetails);
+                        picBrowse.Image = null;
 
-                MessageBox.Show(ex.Message);
+                    }
+                }
+                catch (Exception ex)
+                {
+
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

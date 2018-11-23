@@ -53,35 +53,57 @@ namespace BugTrackingSystem
         //Add the datainserted on the form
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            bool result = businessligicClass.manageProjectMembers(0, Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbMember.SelectedValue.ToString()), cmbMemberRole.Text, txtDescription.Text, 1);
-            if (result == true)
-            {
-                MessageBox.Show("NEW MEMBER HAS BEEN ADDED TO THE PROJECT");
-                dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMemberInProject);
-            }
+            if (cmbProject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (cmbMember.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (cmbMemberRole.Text == "")
+                MessageBox.Show("Please Select Member Role");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
             else
             {
-                MessageBox.Show("ERROR IN ADDING MEMBER IN THE PROJECT");
-                dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMemberInProject);
+                bool result = businessligicClass.manageProjectMembers(0, Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbMember.SelectedValue.ToString()), cmbMemberRole.Text, txtDescription.Text, 1);
+                if (result == true)
+                {
+                    MessageBox.Show("NEW MEMBER HAS BEEN ADDED TO THE PROJECT");
+                    dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMemberInProject);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR IN ADDING MEMBER IN THE PROJECT");
+                    dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMemberInProject);
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            bool result = businessligicClass.manageProjectMembers(projetID, Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbMember.SelectedValue.ToString()), cmbMemberRole.Text, txtDescription.Text, 2);
-            if (result == true)
-            {
-                MessageBox.Show("EXISTING MEMBER HAS BEEN UPDATED TO THE PROJECT");
-                dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMemberInProject);
-            }
+            if (cmbProject.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (cmbMember.Text == "")
+                MessageBox.Show("Please Select Member");
+            else if (cmbMemberRole.Text == "")
+                MessageBox.Show("Please Select Member Role");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
             else
             {
-                MessageBox.Show("ERROR IN UPDATING MEMBER IN THE PROJECT");
-                dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
-                AssistantClass.makeFieldsBlank(gbMemberInProject);
+                bool result = businessligicClass.manageProjectMembers(projetID, Convert.ToInt32(cmbProject.SelectedValue.ToString()), Convert.ToInt32(cmbMember.SelectedValue.ToString()), cmbMemberRole.Text, txtDescription.Text, 2);
+                if (result == true)
+                {
+                    MessageBox.Show("EXISTING MEMBER HAS BEEN UPDATED TO THE PROJECT");
+                    dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMemberInProject);
+                }
+                else
+                {
+                    MessageBox.Show("ERROR IN UPDATING MEMBER IN THE PROJECT");
+                    dgvMemberProjectInformation.DataSource = memberprojectClass.getAllMembersInProject();
+                    AssistantClass.makeFieldsBlank(gbMemberInProject);
+                }
             }
         }
 

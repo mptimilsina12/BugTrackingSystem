@@ -44,52 +44,65 @@ namespace BugTrackingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (cmbUserRole.Text == "")
+                MessageBox.Show("Please Select User Role");           
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businessLogicClass.manageUserRole(0, cmbUserRole.Text, txtDescription.Text, 1);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("NEW USER ROLE HAS BEEN ADDED");
-                    dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    bool result = businessLogicClass.manageUserRole(0, cmbUserRole.Text, txtDescription.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER ROLE HAS BEEN ADDED");
+                        dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR IN ADDING USER ROLE");
+                        dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR IN ADDING USER ROLE");
-                    dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(pnlUserInformation);
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-
-            try
+            if (cmbUserRole.Text == "")
+                MessageBox.Show("Please Select User Role");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businessLogicClass.manageUserRole(userRoleId, cmbUserRole.Text, txtDescription.Text, 2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("NEW USER HAS BEEN UPDATED");
-                    dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    bool result = businessLogicClass.manageUserRole(userRoleId, cmbUserRole.Text, txtDescription.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW USER HAS BEEN UPDATED");
+                        dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON ADDING NEW UPDAED");
+                        dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
+                        AssistantClass.makeFieldsBlank(pnlUserInformation);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR ON ADDING NEW UPDAED");
-                    dgvUserRoleInformation.DataSource = userRoleClass.getAllUserRoles();
-                    AssistantClass.makeFieldsBlank(pnlUserInformation);
-                }
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

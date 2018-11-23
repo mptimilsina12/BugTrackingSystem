@@ -39,27 +39,37 @@ namespace BugTrackingSystem
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
+            if (txtPName.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (dateStart.Text == "")
+                MessageBox.Show("Please Select Start Date");
+            else if (dateEnd.Text == "")
+                MessageBox.Show("Please Select End Date");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businesslogicclass.manageProjects(0, txtPName.Text, Convert.ToDateTime(dateStart.Text), Convert.ToDateTime(dateEnd.Text), txtDescription.Text, 1);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show("NEW PROJECT HAS BEEN SUCCESSFULLY ADDED");
-                    dgvProjectInformation.DataSource = projectclass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    bool result = businesslogicclass.manageProjects(0, txtPName.Text, Convert.ToDateTime(dateStart.Text), Convert.ToDateTime(dateEnd.Text), txtDescription.Text, 1);
+                    if (result == true)
+                    {
+                        MessageBox.Show("NEW PROJECT HAS BEEN SUCCESSFULLY ADDED");
+                        dgvProjectInformation.DataSource = projectclass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON ADDING NEW PROJECT");
+                        dgvProjectInformation.DataSource = projectclass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR ON ADDING NEW PROJECT");
-                    dgvProjectInformation.DataSource = projectclass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    MessageBox.Show(ex.Message);
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
         }
 
         private void dgvProjectInformation_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -81,25 +91,36 @@ namespace BugTrackingSystem
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            try
+            if (txtPName.Text == "")
+                MessageBox.Show("Please Provide Project Name");
+            else if (dateStart.Text == "")
+                MessageBox.Show("Please Select Start Date");
+            else if (dateEnd.Text == "")
+                MessageBox.Show("Please Select End Date");
+            else if (txtDescription.Text == "")
+                MessageBox.Show("Please Provide Description");
+            else
             {
-                bool result = businesslogicclass.manageProjects(ProjectId, txtPName.Text, Convert.ToDateTime(dateStart.Text), Convert.ToDateTime(dateEnd.Text), txtDescription.Text, 2);
-                if (result == true)
+                try
                 {
-                    MessageBox.Show(" PROJECT HAS BEEN SUCCESSFULLY UPDATED");
-                    dgvProjectInformation.DataSource = projectclass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    bool result = businesslogicclass.manageProjects(ProjectId, txtPName.Text, Convert.ToDateTime(dateStart.Text), Convert.ToDateTime(dateEnd.Text), txtDescription.Text, 2);
+                    if (result == true)
+                    {
+                        MessageBox.Show(" PROJECT HAS BEEN SUCCESSFULLY UPDATED");
+                        dgvProjectInformation.DataSource = projectclass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    }
+                    else
+                    {
+                        MessageBox.Show("ERROR ON UPDATING EXISTING PROJECT");
+                        dgvProjectInformation.DataSource = projectclass.getAllProjects();
+                        AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("ERROR ON UPDATING EXISTING PROJECT");
-                    dgvProjectInformation.DataSource = projectclass.getAllProjects();
-                    AssistantClass.makeFieldsBlank(pnlProjectInformation);
+                    MessageBox.Show(ex.Message);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
             }
         }
 

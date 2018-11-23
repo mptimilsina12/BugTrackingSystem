@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
-
+using DataAccessLayer;
 namespace BugTrackingSystem
 {
     public partial class Dashboard : Form
@@ -17,19 +17,24 @@ namespace BugTrackingSystem
         {
             InitializeComponent();
         }
+        UserClass UC = new UserClass();
+        public String UserType;
+
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
 
+
         private void Form1_Load(object sender, EventArgs e)
         {
             //its for current date
             lblTime.Text = DateTime.Now.ToLongTimeString();
             //tooltip to display the name of object
-          
-
+            //DataTable dtt = UC.GetUserTypeByUserName(currentuser.Text);
+            //UserType = Convert.ToString(dtt.Rows[0]["userRoleId"].ToString());
+            
             ToolTip userToolTip = new ToolTip();
             userToolTip.ToolTipTitle = "Manage User";
             userToolTip.UseFading = true;
@@ -154,6 +159,17 @@ namespace BugTrackingSystem
         {
             BugEntryForm BEF = new BugEntryForm();
             BEF.Show();
+           if (UserType == "")
+            {
+                BEF.btnAdd.Enabled = false;
+                BEF.btnDel.Enabled = false;
+                BEF.btnUpdate.Enabled = false;
+
+            }
+            else if (UserType == "Tester")
+            {
+                BEF.btnDel.Enabled = false;
+            }
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
@@ -166,7 +182,19 @@ namespace BugTrackingSystem
         private void bUGSolutionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RegisterBugSolution RBS = new RegisterBugSolution();
+            if (UserType == "2")
+            {
+                RBS.btnAdd.Enabled = false;
+                RBS.btnDel.Enabled = false;
+                RBS.btnUpdate.Enabled = false;
+
+            }
+            else if (UserType == "3")
+            {
+                RBS.btnDel.Enabled = false;
+            }
             RBS.Show();
+
         }
 
         private void reportToolStripMenuItem_Click(object sender, EventArgs e)
